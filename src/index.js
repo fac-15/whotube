@@ -11,10 +11,13 @@ app.use(morgan("tiny"));
 app.use(cors());
 
 //hardcoded youtube username
-const youtuber = "PewDiePie";
-//API 1
+const youtuber = "The Try Guys";
+
 const userNameUrl =
-  "https://www.googleapis.com/youtube/v3/channels?part=id%2Csnippet%2Cstatistics%2CcontentDetails%2CtopicDetails&forUsername=";
+  "https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=1&q=";
+//API 1
+// const userNameUrl =
+//   "https://www.googleapis.com/youtube/v3/channels?part=id%2Csnippet%2Cstatistics%2CcontentDetails%2CtopicDetails&forUsername=";
 //API 2
 const channelUrl =
   "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=";
@@ -30,7 +33,7 @@ app.get("/videos", (req, res) => {
       return response.json();
     })
     .then(function(data) {
-      var channelId = data.items[0].id;
+      var channelId = data.items[0].id.channelId;
       console.log("channel id", channelId);
       return fetch(
         `${channelUrl}${channelId}&key=${process.env.GOOGLE_API_KEY}`
