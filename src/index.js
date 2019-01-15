@@ -2,13 +2,27 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const fetch = require("node-fetch");
+const path = require("path");
+const bodyParser = require("body-parser");
 
 require("dotenv").config();
 
 const app = express();
 
+// body parse will parse the body
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(morgan("tiny"));
 app.use(cors());
+
+//***serving css and views folders contained in public***
+app.use(
+  express.static(path.join(__dirname, "..", "/public"), { maxAge: "30d" })
+);
+// ***** serving homepage index.html
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "/public/", "index.html"));
+});
 
 //hardcoded youtube username
 const youtuber = "The Try Guys";
@@ -25,9 +39,21 @@ const channelUrl =
 const videoListUrl =
   "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=";
 
+let search;
+
+app.post("/", (req, res) => {
+  // 'search' needs to match the 'name' attribute of the input tag in the form
+  search = req.body.search;
+  console.log("your search", search);
+  res.redirect("/videos");
+});
+
 app.get("/videos", (req, res) => {
+  // console.log(req.body.search);
+  console.log("search in GET", search);
+
   var result = fetch(
-    `${userNameUrl}${youtuber}&key=${process.env.GOOGLE_API_KEY}`
+    `${userNameUrl}${search}&key=${process.env.GOOGLE_API_KEY}`
   )
     .then(function(response) {
       return response.json();
