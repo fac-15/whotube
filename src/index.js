@@ -24,18 +24,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "..", "/public/", "index.html"));
 });
 
+// ** YOUTUBE **
+
 //hardcoded youtube username
 const key = process.env.GOOGLE_API_KEY;
-
+// youtube api 1
 const userNameUrl =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=1&q=";
-//API 1
-// const userNameUrl =
-//   "https://www.googleapis.com/youtube/v3/channels?part=id%2Csnippet%2Cstatistics%2CcontentDetails%2CtopicDetails&forUsername=";
-//API 2
+// youtube api 2
 const channelUrl =
   "https://www.googleapis.com/youtube/v3/channels?part=contentDetails&id=";
-//API 3
+// youtube api 3
 const videoListUrl =
   "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=";
 
@@ -94,6 +93,8 @@ function notFound(req, res, next) {
   const error = new Error("Not Found");
   next(error);
 }
+
+// ** TWITTER **
 
 function errorHandler(error, req, res, next) {
   res.status(res.statusCode || 500);
