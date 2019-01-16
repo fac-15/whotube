@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 //hardcoded youtube username
-const youtuber = "The Try Guys";
+const key = process.env.GOOGLE_API_KEY;
 
 const userNameUrl =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=1&q=";
@@ -41,6 +41,7 @@ const videoListUrl =
 
 let search;
 
+//this gets the input from the form
 app.post("/", (req, res) => {
   // 'search' needs to match the 'name' attribute of the input tag in the form
   search = req.body.search;
@@ -52,18 +53,14 @@ app.get("/videos", (req, res) => {
   // console.log(req.body.search);
   console.log("search in GET", search);
 
-  var result = fetch(
-    `${userNameUrl}${search}&key=${process.env.GOOGLE_API_KEY}`
-  )
+  var result = fetch(`${userNameUrl}${search}&key=${key}`)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       var channelId = data.items[0].id.channelId;
       console.log("channel id", channelId);
-      return fetch(
-        `${channelUrl}${channelId}&key=${process.env.GOOGLE_API_KEY}`
-      );
+      return fetch(`${channelUrl}${channelId}&key=${key}`);
     })
     .then(function(response) {
       return response.json();
@@ -74,9 +71,7 @@ app.get("/videos", (req, res) => {
         "this is playListId ",
         data.items[0].contentDetails.relatedPlaylists.uploads
       );
-      return fetch(
-        `${videoListUrl}${playListId}&key=${process.env.GOOGLE_API_KEY}`
-      );
+      return fetch(`${videoListUrl}${playListId}&key=${key}`);
     })
     .then(function(response) {
       // console.log(response.json());
