@@ -41,6 +41,7 @@ const videoListUrl =
 
 let search;
 
+//this gets the input from the form
 app.post("/", (req, res) => {
   // 'search' needs to match the 'name' attribute of the input tag in the form
   search = req.body.search;
