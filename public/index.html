@@ -7,7 +7,7 @@
     <!-- very basic form to send input to backend -->
     <form action="/" method="post">
       <input type="text" name="search" class="video" />
-      <!-- button or input doesn't really matter. but type must be "submit"-->
+      <!-- button or input doesn't really matter. but type must be "submit" -->
 
       <input type="submit" />
     </form>
@@ -19,6 +19,11 @@
     </ul> -->
   </head>
   <body>
-    <h1>html</h1>
+    <h1>hb</h1>
+    <ul>
+      {{#each tweets }}
+      <li>{{ this.text }}</li>
+      {{/each }}
+    </ul>
   </body>
 </html>
