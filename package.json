@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon src/index.js",
-    "build": "node build"
+    "build": "src/index.js"
   },
   "repository": {
     "type": "git",
