@@ -19,36 +19,50 @@ youtube
 linkedin
 
 2 - an hour ago -twitter
+
 3 - 7 hours a week
+
 4 - yes, 5-6 people
+
 5 - used to, dont currently
 twit for work things
 youtube for fun
 more follow on youtube when he was into a particular one on both
 prev would have wanted to see all the things back 
+
 7 - 
+
 8 - when he was following on both that would have been useful
 at the moment its a bit seperated so he isnt sure how much it would be in use
 if it was an option?
-25-34
-male
 
+25-34
+
+male
 
 extra - one youTuber partner?
 higher conversion rate of potential to actual users?
 
 
 JAMIE - 
+
 1 - youTube Insta
+
 2 - yesterday eve
+
 3 - 4 hours
+
 4 - yes 2 main ones
+
 5 - yes insta
+
 6 - yes more info on insta
 more day to day on insta
 youtube is only every few days
 updates don't always make it to videos
+
 7 - follow on recommended videos on youtube
+
 8 - seems unnecessary to combine
 site might not do a good job of combining them
 more social media might be better split up
@@ -57,7 +71,9 @@ might be better to see one person in one place
 seperated it is in more digestable chunks
 one long feed is a lot and could be overwhelming
 would give it a try if available
+
 9 - 26
+
 10 - male
 
 ## Logo ideas....
