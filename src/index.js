@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
 // ** YOUTUBE **
 
 //hardcoded youtube username
-const key = process.env.GOOGLE_API_KEY;
+const youtubeKey = process.env.GOOGLE_API_KEY;
 // youtube api 1
 const userNameUrl =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&maxResults=1&q=";
@@ -52,14 +52,14 @@ app.get("/videos", (req, res) => {
   // console.log(req.body.search);
   console.log("search in GET", search);
 
-  var result = fetch(`${userNameUrl}${search}&key=${key}`)
+  var result = fetch(`${userNameUrl}${search}&key=${youtubeKey}`)
     .then(function(response) {
       return response.json();
     })
     .then(function(data) {
       var channelId = data.items[0].id.channelId;
       console.log("channel id", channelId);
-      return fetch(`${channelUrl}${channelId}&key=${key}`);
+      return fetch(`${channelUrl}${channelId}&key=${youtubeKey}`);
     })
     .then(function(response) {
       return response.json();
@@ -70,7 +70,7 @@ app.get("/videos", (req, res) => {
         "this is playListId ",
         data.items[0].contentDetails.relatedPlaylists.uploads
       );
-      return fetch(`${videoListUrl}${playListId}&key=${key}`);
+      return fetch(`${videoListUrl}${playListId}&key=${youtubeKey}`);
     })
     .then(function(response) {
       // console.log(response.json());
