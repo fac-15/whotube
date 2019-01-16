@@ -60,11 +60,11 @@ would give it a try if available
 
 ## Logo ideas....
 
-![](https://www.dropbox.com/s/pddcp5slp760ywr/owls-reference.png?dl=0)
-
 ![](https://cdn.dribbble.com/users/20931/screenshots/2518827/trivify_g1_dribbble.gif)
 
 ![](https://cdn.dribbble.com/users/1487848/screenshots/3590275/buho.gif)
+
+![](https://i.imgur.com/4R3krGk.png)
 
 ![](https://i.imgur.com/quBhwVY.png)
 
