@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon src/index.js",
-    "build": "browserify src/index.js > dist/index.js"
+    "build": "node build"
   },
   "repository": {
     "type": "git",
