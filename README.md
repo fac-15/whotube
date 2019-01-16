@@ -1,12 +1,12 @@
 WhoTube? user questionnaire.
 
 1. What social media do you normally use?
-    1.2. When was the last time you were on one of these social media?
-    1.3. In the last week, how long did you spend watching videos on youTube?
-2. Do you follow anyone on youTube? 
+   1.2. When was the last time you were on one of these social media?
+   1.3. In the last week, how long did you spend watching videos on youTube?
+2. Do you follow anyone on youTube?
 3. How many youTubers do you actively follow?
 4. Do you follow these youTubers on other social medias as well?
-    4.1. If yes, what social media?
+   4.1. If yes, what social media?
 5. Do you follow them as actively as on youTube?
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
@@ -14,7 +14,7 @@ WhoTube? user questionnaire.
 DAVID:
 
 1 - twitter
-facebook 
+facebook
 youtube
 linkedin
 
@@ -25,20 +25,18 @@ linkedin
 twit for work things
 youtube for fun
 more follow on youtube when he was into a particular one on both
-prev would have wanted to see all the things back 
-7 - 
+prev would have wanted to see all the things back
+7 -
 8 - when he was following on both that would have been useful
 at the moment its a bit seperated so he isnt sure how much it would be in use
 if it was an option?
 25-34
 male
 
-
 extra - one youTuber partner?
 higher conversion rate of potential to actual users?
 
-
-JAMIE - 
+JAMIE -
 1 - youTube Insta
 2 - yesterday eve
 3 - 4 hours
@@ -61,17 +59,12 @@ would give it a try if available
 10 - male
 
 ## Logo ideas....
+
+![](https://www.dropbox.com/s/pddcp5slp760ywr/owls-reference.png?dl=0)
+
 ![](https://cdn.dribbble.com/users/20931/screenshots/2518827/trivify_g1_dribbble.gif)
 
 ![](https://cdn.dribbble.com/users/1487848/screenshots/3590275/buho.gif)
-
-![](https://cdn.dribbble.com/users/1693297/screenshots/3445274/owl.jpg)
-
-![](https://us.123rf.com/450wm/mehibi/mehibi1508/mehibi150800194/43553647-owl-logo-template.jpg?ver=6)
-
-![](https://image.shutterstock.com/z/stock-vector-owl-logo-vector-787535698.jpg)
-
-![](https://www.brandcrowd.com/gallery/brands/pictures/picture14060482018776.jpg)
 
 ![](https://i.imgur.com/quBhwVY.png)
 
@@ -87,5 +80,6 @@ would give it a try if available
 6. As a user, I want to show only certain types of social media, either videos or tweets.
 7. As a user, I want to see the date and time of the video and the tweet.
 8. As a user, I want to see some separation between one video/tweet and the next.
-9. 
+9.
+
 extra - As a authenticated user, I want to find my favourite youtubers profiles (youtube and twitter) when I log into the app.
