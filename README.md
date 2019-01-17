@@ -1,5 +1,4 @@
-WhoTube? user questionnaire.
-
+### WhoTube? user questionnaire.
 1. What social media do you normally use?
    1.2. When was the last time you were on one of these social media?
    1.3. In the last week, how long did you spend watching videos on youTube?
@@ -11,7 +10,7 @@ WhoTube? user questionnaire.
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
 
-DAVID:
+###### DAVID:
 
 1 - twitter
 facebook
@@ -19,34 +18,52 @@ youtube
 linkedin
 
 2 - an hour ago -twitter
+
 3 - 7 hours a week
+
 4 - yes, 5-6 people
+
 5 - used to, dont currently
 twit for work things
 youtube for fun
 more follow on youtube when he was into a particular one on both
-prev would have wanted to see all the things back
-7 -
+prev would have wanted to see all the things back 
+
+6 - 
+
+7 - 
+
 8 - when he was following on both that would have been useful
 at the moment its a bit seperated so he isnt sure how much it would be in use
 if it was an option?
+
 25-34
+
 male
 
 extra - one youTuber partner?
 higher conversion rate of potential to actual users?
 
-JAMIE -
+
+###### JAMIE - 
+
 1 - youTube Insta
+
 2 - yesterday eve
+
 3 - 4 hours
+
 4 - yes 2 main ones
+
 5 - yes insta
+
 6 - yes more info on insta
 more day to day on insta
 youtube is only every few days
 updates don't always make it to videos
+
 7 - follow on recommended videos on youtube
+
 8 - seems unnecessary to combine
 site might not do a good job of combining them
 more social media might be better split up
@@ -55,7 +72,9 @@ might be better to see one person in one place
 seperated it is in more digestable chunks
 one long feed is a lot and could be overwhelming
 would give it a try if available
+
 9 - 26
+
 10 - male
 
 ## Logo ideas....
@@ -72,7 +91,7 @@ would give it a try if available
 
 ## User story
 
-1. As a user, I want to be able to enter a youtuber's username and see their videos.
+1. As a user, I want to be able to enter a youtuber's username and see their most recent videos.
 2. As a user, I want to be able to see their twitter too.
 3. As a user, I want to see the text and the video large enough to be read and watched.
 4. As a user, I want to create a list of my favourite youtubers and sort them as I want.
@@ -80,6 +99,12 @@ would give it a try if available
 6. As a user, I want to show only certain types of social media, either videos or tweets.
 7. As a user, I want to see the date and time of the video and the tweet.
 8. As a user, I want to see some separation between one video/tweet and the next.
-9.
+9. As a authenticated user, I want to see my saved profiles when I log into the app.
 
-extra - As a authenticated user, I want to find my favourite youtubers profiles (youtube and twitter) when I log into the app.
+
+## YouTube API
+
+* We overcame quite complicated documentation to successfully retrieve the data we wanted.
+* We can get the Channel ID for the channel with the selected name.
+* 
+* We can search for any YouTube Channel and we recieve their 5 most recently posted video ID's
