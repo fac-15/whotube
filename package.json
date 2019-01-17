@@ -1,39 +1,43 @@
 {
-    "name": "whotube",
-    "version": "1.0.0",
-    "description": "WhoTube? user questionnaire.",
-    "main": "src/index.js",
-    "directories": {
-        "test": "tests"
-    },
-    "scripts": {
-        "start": "node src/index.js",
-        "dev": "nodemon src/index.js",
-        "build": "src/index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fac-15/whotube.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/fac-15/whotube/issues"
-    },
-    "homepage": "https://github.com/fac-15/whotube#readme",
-    "dependencies": {
-        "body-parser": "^1.18.3",
-        "cors": "^2.8.5",
-        "dotenv": "^6.2.0",
-        "eslint": "^5.12.0",
-        "eslint-config-node": "^4.0.0",
-        "eslint-config-prettier": "^3.4.0",
-        "express": "^4.16.4",
-        "express-handlebars": "^3.0.0",
-        "morgan": "^1.9.1",
-        "node-fetch": "^2.3.0",
-        "nodemon": "^1.18.9",
-        "twitter": "^1.7.1"
-    }
+  "name": "whotube",
+  "version": "1.0.0",
+  "description": "WhoTube? user questionnaire.",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "build": "src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fac-15/whotube.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-15/whotube/issues"
+  },
+  "homepage": "https://github.com/fac-15/whotube#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-prettier": "^3.4.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.3.0",
+    "nodemon": "^1.18.9",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
 }
