@@ -1,6 +1,9 @@
 
 ### WhoTube? user questionnaire.
-[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)[![Coverage Status](https://coveralls.io/repos/github/<github susanx>/<repo whotube>/badge.svg?branch=master)](https://coveralls.io/github/<github susanx>/<repo whotube>?branch=master)[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/<github susanx>/<repo whotube>)
+[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>) 
+[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>) 
+[![Coverage Status](https://coveralls.io/repos/github/<github susanx>/<repo whotube>/badge.svg?branch=master)](https://coveralls.io/github/<github susanx>/<repo whotube>?branch=master) 
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/<github susanx>/<repo whotube>)
 
 1. What social media do you normally use?
    1.2. When was the last time you were on one of these social media?
