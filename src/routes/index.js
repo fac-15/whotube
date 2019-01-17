@@ -9,7 +9,7 @@ router.get('/', (req, response) => {
         if (error) {
             console.log('error in getData: ', error);
         } else {
-            console.log('getData response: ', resultGetData());
+            // console.log('getData response: ', resultGetData());
             response.render('home', {
                 youtubeTwitterArr: resultGetData()
             });

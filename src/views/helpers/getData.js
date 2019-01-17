@@ -67,6 +67,7 @@ const handleTweets = username => {
             //     tweetsArr.push(tweets[i].text);
             // }
             console.log(tweetsArr);
+            return tweetsArr;
             // console.log("TWEETS HERE ", tweets[0].text);
             // console.log("TWEETS HERE ", tweets);
         }
@@ -121,6 +122,7 @@ const getData = cb => {
                     videoId.push(data.items[i].snippet.resourceId.videoId);
                 }
                 console.log(videoId);
+                return videoId;
             })
             .catch(error => {
                 console.log('youtube error ', error);
@@ -128,8 +130,11 @@ const getData = cb => {
             // twitter
             .then(handleTweets(search))
             .then((videoId, tweetsArr) => {
-                let arr = [];
-                arr.concat(videoId);
+                console.log('inside final then');
+                console.log(tweetsArr);
+                let arr = { videoId, tweetsArr };
+
+                // arr.concat(videoId);
                 // arr.push(tweetsArr);
                 console.log(arr);
                 return arr;
