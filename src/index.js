@@ -61,9 +61,10 @@ const handleTweets = username => {
         if (error) {
             console.log('tweet error', error);
         } else {
-            for (let i = 0; i < 2; i++) {
-                tweetsArr.push(tweets[i].text);
-            }
+            tweets.forEach(item => tweetsArr.push(item.text));
+            // for (let i = 0; i < 2; i++) {
+            //     tweetsArr.push(tweets[i].text);
+            // }
             console.log(tweetsArr);
             // console.log("TWEETS HERE ", tweets[0].text);
             // console.log("TWEETS HERE ", tweets);
