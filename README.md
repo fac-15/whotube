@@ -1,5 +1,10 @@
+
 ### WhoTube? user questionnaire.
-[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)[![Coverage Status](https://coveralls.io/repos/github/<github susanx>/<repo whotube>/badge.svg?branch=master)](https://coveralls.io/github/<github susanx>/<repo whotube>?branch=master)[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/<github susanx>/<repo whotube>)
+[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)
+[![Build Status](https://travis-ci.org/<github susanx>/<repo whotube>.svg?branch=master)](https://travis-ci.org/<github susanx>/<repo whotube>)
+[![Coverage Status](https://coveralls.io/repos/github/<github susanx>/<repo whotube>/badge.svg?branch=master)](https://coveralls.io/github/<github susanx>/<repo whotube>?branch=master)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/<github susanx>/<repo whotube>)
+
 
 
 1. What social media do you normally use?
@@ -12,6 +17,16 @@
 5. Do you follow them as actively as on youTube?
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
+
+## User instructions
+
+* clone the repo
+* npm i 
+* ask us for the keys
+* npm run dev 
+* on port 5000
+* soon to be on heroku - https://whotube.herokuapp.com
+
 
 ###### DAVID:
 
