@@ -1,3 +1,12 @@
+## User instructions
+
+* clone the repo
+* npm i 
+* ask us for the keys
+* npm run dev 
+* on port 5000
+* soon to be on heroku - https://whotube.herokuapp.com
+
 
 ### WhoTube? user questionnaire.
 [![Build Status](https://travis-ci.org/susanx/whotube.svg?branch=master)](https://travis-ci.org/susanx/whotube)
@@ -17,16 +26,6 @@
 5. Do you follow them as actively as on youTube?
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
-
-## User instructions
-
-* clone the repo
-* npm i 
-* ask us for the keys
-* npm run dev 
-* on port 5000
-* soon to be on heroku - https://whotube.herokuapp.com
-
 
 ###### DAVID:
 
