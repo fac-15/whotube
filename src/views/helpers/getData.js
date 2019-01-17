@@ -43,6 +43,7 @@ const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
 let search = 'metallica';
 let tweetsArr = [];
+let arr = [];
 
 // ** TWITTER **
 
@@ -53,9 +54,9 @@ const client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-const handleTweets = username => {
-    // let username = "heyMrBoi";
-    const params = { screen_name: username, count: 2 };
+const handleTweets = search => {
+    // username = 'heyMrBoi';
+    const params = { screen_name: search, count: 2 };
     // const tweetsArr = [];
 
     client.get('statuses/user_timeline', params, (error, tweets) => {
@@ -63,17 +64,10 @@ const handleTweets = username => {
             console.log('tweet error', error);
         } else {
             tweets.forEach(item => tweetsArr.push(item.text));
-            // for (let i = 0; i < 2; i++) {
-            //     tweetsArr.push(tweets[i].text);
-            // }
-            console.log(tweetsArr);
+            // console.log(tweetsArr);
+            arr.push(tweetsArr);
             return tweetsArr;
-            // console.log("TWEETS HERE ", tweets[0].text);
-            // console.log("TWEETS HERE ", tweets);
         }
-        // console.log("THIS IS THE TWEETS TREE ", tweets);
-
-        // console.log(tweets); // The favorites.
         // console.log(response.json()); // Raw response object.
         // res.send(response);
     });
@@ -129,10 +123,10 @@ const getData = cb => {
             })
             // twitter
             .then(handleTweets(search))
-            .then((videoId, tweetsArr) => {
+            .then(videoId => {
                 console.log('inside final then');
-                console.log(tweetsArr);
-                let arr = { videoId, tweetsArr };
+                // let arr = [];
+                arr.push(videoId);
 
                 // arr.concat(videoId);
                 // arr.push(tweetsArr);
