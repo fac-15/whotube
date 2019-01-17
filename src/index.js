@@ -52,9 +52,10 @@ var client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
+// // ** TWITTER **
+
 const handleTweets = username => {
   // let username = "heyMrBoi";
-
   let params = { screen_name: username, count: 2 };
   let tweetsArr = [];
 
@@ -66,15 +67,22 @@ const handleTweets = username => {
     if (error) {
       console.log("tweet error", error);
     } else {
-      console.log("TWEETS HERE ", tweets[0].text);
-      // console.log("TWEETS HERE ", tweets);
+      for (var i = 0; i < 2; i++) {
+        tweetsArr.push(tweets[i].text);
+      }
+      console.log(tweetsArr);
+      // console.log("TWEETS HERE ", tweets[0].text);
+      console.log("TWEETS HERE ", tweets);
     }
+    // console.log("THIS IS THE TWEETS TREE ", tweets);
 
     // console.log(tweets); // The favorites.
     // console.log(response.json()); // Raw response object.
     // res.send(response);
   });
 };
+
+// end twitter
 
 //this gets the input from the form
 app.post("/", (req, res) => {
@@ -108,7 +116,7 @@ app.get("/videos", () => {
     .then(response => response.json())
     .then(data => {
       const videoId = []; //array of videoId
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         videoId.push(data.items[i].snippet.resourceId.videoId);
       }
       console.log(videoId);
@@ -116,6 +124,7 @@ app.get("/videos", () => {
     .catch(error => {
       console.log("youtube error ", error);
     })
+    // twitter
     .then(handleTweets(search))
     .catch(error => {
       console.log("twitter error ", error);
@@ -127,64 +136,6 @@ const notFound = (req, res, next) => {
   const error = new Error("Not Found!!!");
   next(error);
 };
-
-// // ** TWITTER **
-
-// var client = new Twitter({
-//   consumer_key: process.env.TWITTER_CONSUMER_KEY,
-//   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-//   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-//   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-// });
-
-// const handleTweets = username => {
-//   // let username = "heyMrBoi";
-
-//   let params = { screen_name: username, count: 2 };
-//   let tweetsArr = [];
-
-//   client.get("statuses/user_timeline", params, function(
-//     error,
-//     tweets,
-//     response
-//   ) {
-//     if (error) {
-//       console.log("tweet error", error);
-//     } else {
-//       console.log("TWEETS HERE ", tweets[0].text);
-//       // console.log("TWEETS HERE ", tweets);
-//     }
-
-//     // console.log(tweets); // The favorites.
-//     // console.log(response.json()); // Raw response object.
-//     // res.send(response);
-//   });
-// };
-
-// handleTweets("heyMrBoi");
-// var stream = client.stream("statuses/filter", { track: "myfirstTweet" });
-// stream.on("data", function(event) {
-//   console.log(event && event.text);
-// });
-
-// stream.on("error", function(error) {
-//   throw error;
-// });
-
-// // You can also get the stream in a callback if you prefer.
-// client.stream("statuses/filter", { track: "javascript" }, function(stream) {
-//   stream.on("data", function(event) {
-//     console.log(event && event.text);
-//   });
-
-//   stream.on("error", function(error) {
-//     throw error;
-//   });
-// });
-
-// module.exports = router;
-
-// end twitter
 
 const errorHandler = (error, res) => {
   res.status(res.statusCode || 500);
