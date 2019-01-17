@@ -43,6 +43,39 @@ const videoListUrl = "playlistItems?part=snippet&playlistId=";
 
 let search;
 
+// ** TWITTER **
+
+var client = new Twitter({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+
+const handleTweets = username => {
+  // let username = "heyMrBoi";
+
+  let params = { screen_name: username, count: 2 };
+  let tweetsArr = [];
+
+  client.get("statuses/user_timeline", params, function(
+    error,
+    tweets,
+    response
+  ) {
+    if (error) {
+      console.log("tweet error", error);
+    } else {
+      console.log("TWEETS HERE ", tweets[0].text);
+      // console.log("TWEETS HERE ", tweets);
+    }
+
+    // console.log(tweets); // The favorites.
+    // console.log(response.json()); // Raw response object.
+    // res.send(response);
+  });
+};
+
 //this gets the input from the form
 app.post("/", (req, res) => {
   // 'search' needs to match the 'name' attribute of the input tag in the form
@@ -81,7 +114,11 @@ app.get("/videos", () => {
       console.log(videoId);
     })
     .catch(error => {
-      console.log("request failed", error);
+      console.log("youtube error ", error);
+    })
+    .then(handleTweets(search))
+    .catch(error => {
+      console.log("twitter error ", error);
     });
 });
 
@@ -91,57 +128,40 @@ const notFound = (req, res, next) => {
   next(error);
 };
 
-// ** TWITTER **
+// // ** TWITTER **
 
-var client = new Twitter();
-
-var router = express.Router();
-var client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
-
-// router.get("/", function(req, res, next) {
-//   // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-//   client.get(
-//     "statuses/user_timeline",
-//     { screen_name: "nodejs", count: 20 },
-//     function(error, tweets, response) {
-//       if (!error) {
-//         res.status(200).render("index", { title: "Express", tweets: tweets });
-//       } else {
-//         res.status(500).json({ error: error });
-//       }
-//     }
-//   );
+// var client = new Twitter({
+//   consumer_key: process.env.TWITTER_CONSUMER_KEY,
+//   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+//   access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+//   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 // });
-const handleTweets = username => {
-  // let username = "heyMrBoi";
 
-  let params = { screen_name: username, count: 2 };
-  let tweetsArr = [];
+// const handleTweets = username => {
+//   // let username = "heyMrBoi";
 
-  client.get("statuses/user_timeline", params, function(
-    error,
-    tweets,
-    response
-  ) {
-    if (error) {
-      console.log("tweet error", error);
-    } else {
-      // console.log("TWEETS HERE ", tweets[1].text);
-      console.log("TWEETS HERE ", tweets);
-    }
+//   let params = { screen_name: username, count: 2 };
+//   let tweetsArr = [];
 
-    // console.log(tweets); // The favorites.
-    // console.log(response.json()); // Raw response object.
-    // res.send(response);
-  });
-};
+//   client.get("statuses/user_timeline", params, function(
+//     error,
+//     tweets,
+//     response
+//   ) {
+//     if (error) {
+//       console.log("tweet error", error);
+//     } else {
+//       console.log("TWEETS HERE ", tweets[0].text);
+//       // console.log("TWEETS HERE ", tweets);
+//     }
 
-handleTweets("heyMrBoi");
+//     // console.log(tweets); // The favorites.
+//     // console.log(response.json()); // Raw response object.
+//     // res.send(response);
+//   });
+// };
+
+// handleTweets("heyMrBoi");
 // var stream = client.stream("statuses/filter", { track: "myfirstTweet" });
 // stream.on("data", function(event) {
 //   console.log(event && event.text);
