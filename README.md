@@ -1,11 +1,11 @@
 ### WhoTube? user questionnaire.
 1. What social media do you normally use?
-    1.2. When was the last time you were on one of these social media?
-    1.3. In the last week, how long did you spend watching videos on youTube?
-2. Do you follow anyone on youTube? 
+   1.2. When was the last time you were on one of these social media?
+   1.3. In the last week, how long did you spend watching videos on youTube?
+2. Do you follow anyone on youTube?
 3. How many youTubers do you actively follow?
 4. Do you follow these youTubers on other social medias as well?
-    4.1. If yes, what social media?
+   4.1. If yes, what social media?
 5. Do you follow them as actively as on youTube?
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
@@ -13,7 +13,7 @@
 ###### DAVID:
 
 1 - twitter
-facebook 
+facebook
 youtube
 linkedin
 
@@ -78,17 +78,12 @@ would give it a try if available
 10 - male
 
 ## Logo ideas....
+
 ![](https://cdn.dribbble.com/users/20931/screenshots/2518827/trivify_g1_dribbble.gif)
 
 ![](https://cdn.dribbble.com/users/1487848/screenshots/3590275/buho.gif)
 
-![](https://cdn.dribbble.com/users/1693297/screenshots/3445274/owl.jpg)
-
-![](https://us.123rf.com/450wm/mehibi/mehibi1508/mehibi150800194/43553647-owl-logo-template.jpg?ver=6)
-
-![](https://image.shutterstock.com/z/stock-vector-owl-logo-vector-787535698.jpg)
-
-![](https://www.brandcrowd.com/gallery/brands/pictures/picture14060482018776.jpg)
+![](https://i.imgur.com/4R3krGk.png)
 
 ![](https://i.imgur.com/quBhwVY.png)
 
