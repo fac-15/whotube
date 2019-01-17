@@ -99,13 +99,7 @@ would give it a try if available
 
 ![](https://cdn.dribbble.com/users/1487848/screenshots/3590275/buho.gif)
 
-![](https://cdn.dribbble.com/users/1693297/screenshots/3445274/owl.jpg)
-
-![](https://us.123rf.com/450wm/mehibi/mehibi1508/mehibi150800194/43553647-owl-logo-template.jpg?ver=6)
-
-![](https://image.shutterstock.com/z/stock-vector-owl-logo-vector-787535698.jpg)
-
-![](https://www.brandcrowd.com/gallery/brands/pictures/picture14060482018776.jpg)
+![](https://i.imgur.com/4R3krGk.png)
 
 ![](https://i.imgur.com/quBhwVY.png)
 
