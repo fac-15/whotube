@@ -30,6 +30,7 @@
     "eslint-config-node": "^4.0.0",
     "eslint-config-prettier": "^3.4.0",
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.12",
     "morgan": "^1.9.1",
     "node-fetch": "^2.3.0",
