@@ -52,8 +52,6 @@ var client = new Twitter({
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-// // ** TWITTER **
-
 const handleTweets = username => {
   // let username = "heyMrBoi";
   let params = { screen_name: username, count: 2 };
@@ -72,7 +70,7 @@ const handleTweets = username => {
       }
       console.log(tweetsArr);
       // console.log("TWEETS HERE ", tweets[0].text);
-      console.log("TWEETS HERE ", tweets);
+      // console.log("TWEETS HERE ", tweets);
     }
     // console.log("THIS IS THE TWEETS TREE ", tweets);
 

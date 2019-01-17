@@ -1,5 +1,4 @@
-WhoTube? user questionnaire.
-
+### WhoTube? user questionnaire.
 1. What social media do you normally use?
     1.2. When was the last time you were on one of these social media?
     1.3. In the last week, how long did you spend watching videos on youTube?
@@ -11,7 +10,7 @@ WhoTube? user questionnaire.
 6. How do you keep up-to-date with each youTubers' social media videos/posts?
 7. How would you feel if all social media from one youTuber would be on one website?
 
-DAVID:
+###### DAVID:
 
 1 - twitter
 facebook 
@@ -30,6 +29,8 @@ youtube for fun
 more follow on youtube when he was into a particular one on both
 prev would have wanted to see all the things back 
 
+6 - 
+
 7 - 
 
 8 - when he was following on both that would have been useful
@@ -44,7 +45,7 @@ extra - one youTuber partner?
 higher conversion rate of potential to actual users?
 
 
-JAMIE - 
+###### JAMIE - 
 
 1 - youTube Insta
 
@@ -95,7 +96,7 @@ would give it a try if available
 
 ## User story
 
-1. As a user, I want to be able to enter a youtuber's username and see their videos.
+1. As a user, I want to be able to enter a youtuber's username and see their most recent videos.
 2. As a user, I want to be able to see their twitter too.
 3. As a user, I want to see the text and the video large enough to be read and watched.
 4. As a user, I want to create a list of my favourite youtubers and sort them as I want.
@@ -103,5 +104,12 @@ would give it a try if available
 6. As a user, I want to show only certain types of social media, either videos or tweets.
 7. As a user, I want to see the date and time of the video and the tweet.
 8. As a user, I want to see some separation between one video/tweet and the next.
-9. 
-extra - As a authenticated user, I want to find my favourite youtubers profiles (youtube and twitter) when I log into the app.
+9. As a authenticated user, I want to see my saved profiles when I log into the app.
+
+
+## YouTube API
+
+* We overcame quite complicated documentation to successfully retrieve the data we wanted.
+* We can get the Channel ID for the channel with the selected name.
+* 
+* We can search for any YouTube Channel and we recieve their 5 most recently posted video ID's
