@@ -1,10 +1,8 @@
-
-### WhoTube? user questionnaire.
 [![Build Status](https://travis-ci.org/susanx/whotube.svg?branch=master)](https://travis-ci.org/susanx/whotube) 
 [![Build Status](https://travis-ci.org/susanx/whotube>.svg?branch=master)](https://travis-ci.org/susanx/whotube>) 
 [![Coverage Status](https://coveralls.io/repos/github/susanx/whotube/badge.svg?branch=master)](https://coveralls.io/github/susanx/whotube?branch=staging) 
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/susanx/whotube)
-
+### WhoTube? user questionnaire
 1. What social media do you normally use?
    1.2. When was the last time you were on one of these social media?
    1.3. In the last week, how long did you spend watching videos on youTube?
