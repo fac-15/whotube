@@ -2,6 +2,10 @@
 [![Build Status](https://travis-ci.org/susanx/whotube>.svg?branch=master)](https://travis-ci.org/susanx/whotube>) 
 [![Coverage Status](https://coveralls.io/repos/github/susanx/whotube/badge.svg?branch=master)](https://coveralls.io/github/susanx/whotube?branch=staging) 
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/susanx/whotube)
+
+[![npm package](https://nodei.co/npm/request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
+
+
 ### WhoTube? user questionnaire
 
 1. What social media do you normally use?
