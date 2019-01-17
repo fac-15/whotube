@@ -17,12 +17,12 @@
 
 ## User instructions
 
-clone the repo
-npm i 
-Ask us for the keys
-npm run dev 
-On port 5000
-Soon to be on heroku - https://whotube.herokuapp.com
+* clone the repo
+* npm i 
+* ask us for the keys
+* npm run dev 
+* on port 5000
+* soon to be on heroku - https://whotube.herokuapp.com
 
 
 ###### DAVID:
