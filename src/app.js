@@ -6,10 +6,10 @@ const favicon = require('serve-favicon');
 
 const cors = require('cors');
 const morgan = require('morgan');
-const fetch = require('node-fetch');
-const Twitter = require('twitter');
+// const fetch = require('node-fetch');
+// const Twitter = require('twitter');
 
-const helpers = require('./views/helpers/index.js');
+// const helpers = require('./views/helpers/index.js');
 const routes = require('./routes/index.js');
 
 const app = express();
