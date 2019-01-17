@@ -4,15 +4,23 @@ const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 
+const cors = require('cors');
+const morgan = require('morgan');
+const fetch = require('node-fetch');
+const Twitter = require('twitter');
+
 const helpers = require('./views/helpers/index.js');
 const routes = require('./routes/index.js');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
+app.use(morgan('tiny'));
+app.use(cors());
+
+// app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.set('view engine', 'hbs');
