@@ -1,3 +1,4 @@
+// const search = require('./postData.js');
 // eslint is expecting 'import' instead of 'require'
 // const app = require('../../app.js');
 // const express = require('express');
@@ -41,7 +42,11 @@ const channelUrl = 'channels?part=contentDetails&id=';
 // youtube api 3
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
-let search = 'metallica';
+// let search = 'metallica';
+
+//const search = postData(); 
+
+
 let tweetsArr = [];
 let arr = [];
 
@@ -75,15 +80,9 @@ const handleTweets = search => {
 
 // end twitter
 
-//this gets the input from the form
-// app.post('/', (req, res) => {
-//     // 'search' needs to match the 'name' attribute of the input tag in the form
-//     search = req.body.search;
-//     console.log('your search', search);
-//     res.redirect('/videos');
-// });
 
-const getData = cb => {
+
+const getData = (search,cb) => {
     // if(error) {
 
     // }
