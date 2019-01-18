@@ -4,8 +4,8 @@ const helpers = require('../views/helpers/index.js');
 // const reset = require('../database/build_test.js');
 
 router.get('/', (req, response) => {
-    console.log('inside router.get');
-    console.log("routesfile: ",req.body);
+    // console.log('inside router.get');
+    // console.log("routesfile: ",req.body);
     response.render('home')       
 });
 
@@ -19,14 +19,14 @@ router.post('/', (req, res) => {
 router.get('/results/:search', (req, response) => {
     let search = req.url.split("/");
     search = search[search.length-1];
-    console.log('indexjs-search',search);
-    console.log('inside router.get');
-    console.log("routesfile: ",req.body);
+    // console.log('indexjs-search',search);
+    // console.log('inside router.get');
+    // console.log("routesfile: ",req.body);
     helpers.getData(search,(error, resultGetData) => {
         if (error) {
             console.log('error in getData: ', error);
         } else {
-            // console.log('getData response: ', resultGetData());
+            console.log('getData response: ', resultGetData);
             response.render('results', {
                 youtubeTwitterArr: resultGetData()
             });

@@ -1,6 +1,3 @@
 module.exports = {
-    getData: require('./getData'),
-    postData: require('./postData')
-
-
+    getData: require('./getData')
 };
