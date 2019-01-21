@@ -1,8 +1,11 @@
 const fetch = require('node-fetch');
+
 require('dotenv').config();
 
-const handleTweets = require('./handleTweets.js');
+// const Twitter = require('twitter');
+// const handleTweets = require('./handleTweets');
 
+// ** YOUTUBE **
 //hardcoded youtube username
 const youtubeKey = process.env.GOOGLE_API_KEY;
 // youtube base url
@@ -14,22 +17,17 @@ const channelUrl = 'channels?part=contentDetails&id=';
 // youtube api 3
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
-let search = 'metallica';
-let arr = [];
+// const arr = [];
 
-const youtubeApi = cb => {
-    // if(error) {
+const youtubeApi = search => {
+    // console.log('search in GET', search);
 
-    // }
-    // app.get('/videos', () => {
-    // console.log(req.body.search);
-    console.log('search in GET', search);
-    return cb(null, () => {
+    return new Promise((resolve, reject) => {
         fetch(`${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`)
             .then(response => response.json())
             .then(data => {
                 const channelId = data.items[0].id.channelId;
-                console.log('channel id', channelId);
+                // console.log('channel id', channelId);
                 return fetch(
                     `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
                 );
@@ -38,7 +36,7 @@ const youtubeApi = cb => {
             .then(data => {
                 const playListId =
                     data.items[0].contentDetails.relatedPlaylists.uploads;
-                console.log('this is playListId ', playListId);
+                // console.log('this is playListId ', playListId);
                 return fetch(
                     `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
                 );
@@ -49,28 +47,27 @@ const youtubeApi = cb => {
                 for (let i = 0; i < 4; i++) {
                     videoId.push(data.items[i].snippet.resourceId.videoId);
                 }
-                console.log('video ID in youtubeApi', videoId);
-                return videoId;
+                // console.log(videoId);
+                resolve(videoId);
             })
             .catch(error => {
                 console.log('youtube error ', error);
-            })
-            // twitter
-            .then(handleTweets(search))
-            .then(videoId => {
-                console.log('inside final then');
-                // let arr = [];
-                arr.push(videoId);
-
-                // arr.concat(videoId);
-                // arr.push(tweetsArr);
-                console.log('final arr, in youtubeApi', arr);
-                return arr;
-            })
-            .catch(error => {
-                console.log('twitter error ', error);
             });
     });
+
+    // .then(videoId => {
+    //     console.log('inside final then');
+    //     arr.push(videoId);
+    //     console.log(arr);
+    //     return arr;
+    // })
+    //
+    // twitter
+    // .then(() => arr.push(handleTweets(search)))
+
+    // .catch(error => {
+    //     console.log('twitter error ', error);
+    // });
 };
 
 module.exports = youtubeApi;

@@ -1,12 +1,7 @@
 <h1>YouTube</h1>
 <ul>
-  {{#each youtuber}}
-  <li>{{  }}</li>
-  {{/each }}
-</ul>
-<h1>Twitter</h1>
-<ul>
-  {{#each tweet}}
-  <li>{{  }}</li>
-  {{ /each }}
+  {{#each youtubeTwitterArr}}
+  <li>{{this}}</li>
+  <iframe src='https://www.youtube.com/embed/{{this}}'> </iframe>
+  {{/each}}
 </ul>

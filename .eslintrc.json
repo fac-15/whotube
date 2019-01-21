@@ -1,7 +1,9 @@
 {
-  "extends": ["node", "prettier"],
-  "env": { "node": true, "browser": true },
-  "rules": {
-      "no-console": 0
-  }
+    "extends": ["node", "prettier"],
+    "env": { "node": true, "browser": true },
+    "rules": {
+        "no-console": 0,
+        "import/no-commonjs": "off",
+        "import/no-nodejs-modules": "off"
+    }
 }
