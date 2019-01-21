@@ -21,16 +21,35 @@ router.get('/results/:search', (req, response) => {
     search = search[search.length - 1];
     console.log('inside router.get');
 
-    const result = helpers.apicall(search);
-    result.then(array => {
-        response.render('results', {
-            youtubeTwitterArr: array
-        });
-    });
+    // const obj = {
+    //     xx: helpers.apicall(search),
+    //     yy: helpers.apitweets(search)
+    // };
 
-    // if (error) {
-    //     console.log('error in getData: ', error);
-    // } else {
-    //     console.log('ROUTES => apicall response: ', response);
+    // console.log('THIS IS OBJ.XX ', obj.xx);
+
+    const resultY = helpers.apicall(search);
+    const resultT = helpers.apitweets(search);
+
+    // xx.then(yarray, tarray => {
+    // console.log('THIS IS RESULT ', result);
+    response.render('results', {
+        youtubeArr: resultY.then(data => data)
+        // twitterArr: resultT.then(data => data)
+    });
 });
+
+// const yy = helpers.apitweets(search);
+// yy.then(array => {
+//     console.log(array);
+//     response.render('results', {
+//         twitterArr: array
+//     });
+// });
+
+// if (error) {
+//     console.log('error in getData: ', error);
+// } else {
+//     console.log('ROUTES => apicall response: ', response);
+
 module.exports = router;
