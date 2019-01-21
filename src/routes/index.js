@@ -21,12 +21,26 @@ router.get('/results/:search', (req, response) => {
     search = search[search.length - 1];
     console.log('inside router.get');
 
-    const result = helpers.apicall(search);
-    result.then(array => {
-        response.render('results', {
-            youtubeTwitterArr: array
-        });
-    });
+    const result = helpers.apicall.channel(search);
+    result.then(data =>
+        helpers.apicall.playlist(data)
+    )
+        .then(data =>
+            helpers.apicall.videolist(data)
+        )
+        .then(data =>
+            helpers.apicall.arrayOfVideos(data)
+        )
+        .then(data => {
+            response.render('results', {
+                youtubeArr: data
+            })
+        })
+    // result.then(array => {
+    //     response.render('results', {
+    //         youtubeTwitterArr: array
+    //     });
+    // });
 
     // if (error) {
     //     console.log('error in getData: ', error);
