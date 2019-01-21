@@ -11,7 +11,7 @@ const client = new Twitter({
 const handleTweets = search => {
     return new Promise((resolve, reject) => {
         const tweetsArr = [];
-        const params = { screen_name: search, count: 2 };
+        const params = { screen_name: search, count: 5 };
         client.get('statuses/user_timeline', params, (error, tweets) => {
             if (error) {
                 console.log('tweet error', error);
