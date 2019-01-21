@@ -8,11 +8,9 @@ const client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-const tweetsArr = [];
-
 const handleTweets = search => {
+    const tweetsArr = [];
     const params = { screen_name: search, count: 2 };
-
     client.get('statuses/user_timeline', params, (error, tweets) => {
         if (error) {
             console.log('tweet error', error);

@@ -1,6 +1,9 @@
 const fetch = require('node-fetch');
+
 require('dotenv').config();
-const handleTweets = require('./handleTweets');
+
+// const Twitter = require('twitter');
+// const handleTweets = require('./handleTweets');
 
 // ** YOUTUBE **
 //hardcoded youtube username
@@ -16,14 +19,14 @@ const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
 const arr = [];
 
-const youtubeApi = (search,cb) => {
-    console.log('search in GET', search);
+const youtubeApi = (search, cb) => {
+    // console.log('search in GET', search);
     return cb(null, () => {
         fetch(`${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`)
             .then(response => response.json())
             .then(data => {
                 const channelId = data.items[0].id.channelId;
-                console.log('channel id', channelId);
+                // console.log('channel id', channelId);
                 return fetch(
                     `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
                 );
@@ -32,7 +35,7 @@ const youtubeApi = (search,cb) => {
             .then(data => {
                 const playListId =
                     data.items[0].contentDetails.relatedPlaylists.uploads;
-                console.log('this is playListId ', playListId);
+                // console.log('this is playListId ', playListId);
                 return fetch(
                     `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
                 );
@@ -43,25 +46,25 @@ const youtubeApi = (search,cb) => {
                 for (let i = 0; i < 4; i++) {
                     videoId.push(data.items[i].snippet.resourceId.videoId);
                 }
-                console.log(videoId);
+                // console.log(videoId);
                 return videoId;
-            })
-            .catch(error => {
-                console.log('youtube error ', error);
-            })
-            // twitter
-            // .then(handleTweets(search))
-            // .then(videoId => {
-            //     console.log('inside final then');
-            //     arr.push(videoId);
-            //     console.log(arr);
-            //     return arr;
-            // })
-            // .catch(error => {
-            //     console.log('twitter error ', error);
-            // });
+            });
+        // .then(videoId => {
+        //     console.log('inside final then');
+        //     arr.push(videoId);
+        //     console.log(arr);
+        //     return arr;
+        // })
+        // .catch(error => {
+        //     console.log('youtube error ', error);
+        // });
+        // twitter
+        // .then(() => arr.push(handleTweets(search)))
+
+        // .catch(error => {
+        //     console.log('twitter error ', error);
+        // });
     });
 };
-
 
 module.exports = youtubeApi;
