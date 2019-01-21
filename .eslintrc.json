@@ -3,7 +3,7 @@
     "env": { "node": true, "browser": true },
     "rules": {
         "no-console": 0,
-        "import/no-nodejs-modules": 0,
-        "import/no-commomjs": 0
+        "import/no-commonjs": "off",
+        "import/no-nodejs-modules": "off"
     }
 }
