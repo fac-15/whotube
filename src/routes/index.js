@@ -19,18 +19,18 @@ router.post('/', (req, res) => {
 router.get('/results/:search', (req, response) => {
     let search = req.url.split('/');
     search = search[search.length - 1];
-    // console.log('indexjs-search',search);
-    // console.log('inside router.get');
-    // console.log("routesfile: ",req.body);
-    helpers.apicall(search, (error, resultGetData) => {
-        if (error) {
-            console.log('error in getData: ', error);
-        } else {
-            console.log('ROUTES => apicall response: ', resultGetData());
-            response.render('results', {
-                youtubeTwitterArr: resultGetData()
-            });
-        }
+    console.log('inside router.get');
+
+    const result = helpers.apicall(search);
+    result.then(array => {
+        response.render('results', {
+            youtubeTwitterArr: array
+        });
     });
+
+    // if (error) {
+    //     console.log('error in getData: ', error);
+    // } else {
+    //     console.log('ROUTES => apicall response: ', response);
 });
 module.exports = router;

@@ -17,11 +17,12 @@ const channelUrl = 'channels?part=contentDetails&id=';
 // youtube api 3
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
-const arr = [];
+// const arr = [];
 
-const youtubeApi = (search, cb) => {
+const youtubeApi = search => {
     // console.log('search in GET', search);
-    return cb(null, () => {
+
+    return new Promise((resolve, reject) => {
         fetch(`${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`)
             .then(response => response.json())
             .then(data => {
@@ -47,24 +48,26 @@ const youtubeApi = (search, cb) => {
                     videoId.push(data.items[i].snippet.resourceId.videoId);
                 }
                 // console.log(videoId);
-                return videoId;
+                resolve(videoId);
+            })
+            .catch(error => {
+                console.log('youtube error ', error);
             });
-        // .then(videoId => {
-        //     console.log('inside final then');
-        //     arr.push(videoId);
-        //     console.log(arr);
-        //     return arr;
-        // })
-        // .catch(error => {
-        //     console.log('youtube error ', error);
-        // });
-        // twitter
-        // .then(() => arr.push(handleTweets(search)))
-
-        // .catch(error => {
-        //     console.log('twitter error ', error);
-        // });
     });
+
+    // .then(videoId => {
+    //     console.log('inside final then');
+    //     arr.push(videoId);
+    //     console.log(arr);
+    //     return arr;
+    // })
+    //
+    // twitter
+    // .then(() => arr.push(handleTweets(search)))
+
+    // .catch(error => {
+    //     console.log('twitter error ', error);
+    // });
 };
 
 module.exports = youtubeApi;

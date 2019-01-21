@@ -1,4 +1,5 @@
 module.exports = {
     // getData: require('./getData')
-    apicall: require('./youtubeApi')
+    apicall: require('./youtubeApi'),
+    apitweets: require('./handleTweets')
 };
