@@ -1,9 +1,9 @@
 // const handleTweets = require('');
-const func = require('../src/views/helpers/getData.js');
+// const func = require('../src/views/helpers/getData.js');
 const sum = require('./test-sum.js');
 const helpers = require('../src/views/helpers/index.js');
 const request = require('supertest');
-const router = require('../src/routes/router');
+const router = require('../src/routes/index.js');
 
 // JEST test on basic fucntion is working
 test('adds 1+2 to equal 3', () => {
@@ -26,11 +26,9 @@ test('check if youtube playlist Api result is object', () => {
 
 describe('Test the root path', () => {
     test('It should response the GET method', () => {
-        return request(router)
+        request(router)
             .get('/')
-            .then(response => {
-                expect(response.statusCode).toBe(200);
-            });
+            .expect(200);
     });
 });
 
