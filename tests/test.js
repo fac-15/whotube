@@ -27,8 +27,19 @@ const playlistCall = helpers.apiYoutube
     .channel('metallica')
     .then(data => helpers.apiYoutube.playlist(data));
 
-playlistCall.then(x => console.log(x));
+// playlistCall.then(x => console.log(x));
 // console.log(channelCall);
 test('check if youtube video Api result is object', () => {
     expect(typeof playlistCall.then(x => x)).toBe('object');
+});
+
+// test YoutubeApi call is working ( 4 of 4)
+const videolistCall = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data))
+    .then(data => helpers.apiYoutube.videolist(data));
+
+// videolistCall.then(x => console.log(x));
+test('check if youtube list of video Api result is object', () => {
+    expect(typeof videolistCall.then(x => x)).toBe('object');
 });
