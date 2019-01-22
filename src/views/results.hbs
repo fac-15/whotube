@@ -17,7 +17,11 @@
 
 <ul>
   {{#each twitterArr}}
-  <li>{{this}}</li>
+  <li>{{@key}}: {{this}}</li>
 
   {{/each}}
 </ul>
+
+{{#each object}}
+{{@key}}: {{this}}
+{{/each}}
