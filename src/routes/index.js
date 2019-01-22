@@ -22,14 +22,14 @@ router.get('/results/:search', (req, response) => {
     console.log(search);
     console.log('inside router.get');
 
-    const resultY = helpers.apicall
+    const resultY = helpers.apiYoutube
         .channel(search)
-        .then(data => helpers.apicall.playlist(data))
-        .then(data => helpers.apicall.videolist(data))
-        .then(data => helpers.apicall.arrayOfVideos(data));
+        .then(data => helpers.apiYoutube.playlist(data))
+        .then(data => helpers.apiYoutube.videolist(data))
+        .then(data => helpers.apiYoutube.arrayOfVideos(data));
     console.log('youtube array: ', resultY);
 
-    const resultT = helpers.apitweets(search);
+    const resultT = helpers.apiTweets(search);
 
     // make call to get array with 0 being videIDs and 1 being tweets
     Promise.all([resultY, resultT])
@@ -67,14 +67,14 @@ router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
     searchTwitter = searchTwitter[searchTwitter.length - 1];
     console.log('get seperate result TW: ', searchTwitter);
 
-    const resultY = helpers.apicall
+    const resultY = helpers.apiYoutube
         .channel(searchYoutube)
-        .then(data => helpers.apicall.playlist(data))
-        .then(data => helpers.apicall.videolist(data))
-        .then(data => helpers.apicall.arrayOfVideos(data));
+        .then(data => helpers.apiYoutube.playlist(data))
+        .then(data => helpers.apiYoutube.videolist(data))
+        .then(data => helpers.apiYoutube.arrayOfVideos(data));
     console.log('youtube array: ', resultY);
 
-    const resultT = helpers.apitweets(searchTwitter);
+    const resultT = helpers.apiTweets(searchTwitter);
 
     // make call to get array with 0 being videIDs and 1 being tweets
     Promise.all([resultY, resultT])
