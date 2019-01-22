@@ -14,6 +14,7 @@ test('check if youtube channel Api result is object', () => {
 });
 
 // test YoutubeApi call is working ( 2 of 4)
+
 const channelCall = helpers.apiYoutube.channel('metallica');
 
 // channelCall.then(x => console.log(x));
