@@ -26,7 +26,6 @@ const getYoutubeChannel = search => {
             console.log('inside getYoutubeChannel: Promise');
             resolve(response.json());
         });
-        // .catch(reject('Whoops!'));
     });
 };
 
@@ -37,7 +36,6 @@ const getYoutubePlaylist = channelData => {
         fetch(
             `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
         ).then(response => resolve(response.json()));
-        // .catch(reject('Whoops!'));
     });
 };
 
@@ -49,7 +47,6 @@ const getYoutubeVideolist = playlistData => {
         fetch(
             `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
         ).then(response => resolve(response.json()));
-        // .catch(reject('Whoops!'));
     });
 };
 
@@ -65,32 +62,6 @@ const arrayId = videoData => {
         resolve(videoId);
     });
 };
-
-// const youtubeApi = search => {
-
-//     // console.log('search in GET', search);
-
-//     const getYoutubePlaylist =
-//     return new Promise((resolve, reject) => {
-
-//         .catch(error => {
-//             console.log('youtube error ', error);
-//         });
-// });
-
-// .then(videoId => {
-//     console.log('inside final then');
-//     arr.push(videoId);
-//     console.log(arr);
-//     return arr;
-// })
-//
-// twitter
-// .then(() => arr.push(handleTweets(search)))
-
-// .catch(error => {
-//     console.log('twitter error ', error);
-// });
 
 module.exports = {
     channel: getYoutubeChannel,
