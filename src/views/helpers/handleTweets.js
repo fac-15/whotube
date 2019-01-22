@@ -47,9 +47,13 @@ const handleTweets = search =>
                 // console.log('THIS IS A CLEAN TIME', cleanTime);
                 cleanedTime = tweetsTime.map(date => {
                     const separateTime = date.split(' ');
-                    // console.log('this is separate time', separateTime);
+                    console.log('this is separate time', separateTime);
                     const cleantime = separateTime.slice(0, 4);
-                    // console.log('this is new clean time: ', cleantime);
+                    // var at = 'at';
+                    cleantime.splice(2, 0, 'at');
+                    // var cleantime = cleantim.splice(2, 0, at);
+
+                    console.log('this is new clean time: ', cleantime);
 
                     var finalTime = cleantime.join(' '); //.insert(3, 'at');
                     console.log('this is final time: ', finalTime);
