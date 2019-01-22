@@ -15,13 +15,13 @@ Array.prototype.insert = function(index, item) {
 const cleanTimeFunc = timeArr => {
     timeArr.map(date => {
         const separateTime = date.split(' ');
-        // console.log('this is separate time',  separateTime)
+        // console.log('this is separate time', separateTime);
         const cleantime = separateTime.slice(0, 4);
-        // console.log('this is new clean time: ', cleantime)
+        // console.log('this is new clean time: ', cleantime);
 
-        var finalime = cleantime.insert(3, 'at');
-        // console.log(finalTime)
-        return 'this is new clean time: ', cleantime.join(' ');
+        var finalTime = cleantime.join(' '); //.insert(3, 'at');
+        // console.log('this is final time: ', finalTime);
+        return 'this is final time: ', finalTime;
     });
 };
 
@@ -30,6 +30,7 @@ const handleTweets = search =>
         const tweetsText = [];
         const tweetsTime = [];
         const finalTweetsArr = {};
+        let cleanedTime = [];
 
         const params = { screen_name: search, count: 10 };
         client.get('statuses/user_timeline', params, (error, tweets) => {
@@ -40,11 +41,23 @@ const handleTweets = search =>
                 tweets.forEach(item => tweetsTime.push(item.created_at));
                 // console.log(tweets);
 
-                const cleanTime = cleanTimeFunc(tweetsTime);
-                console.log('THIS IS A CLEAN TIME', cleanTime);
+                // HOW TO REFERENCE THE FUNC ABOVE?
+
+                console.log('supposedly clean time', tweetsTime);
+                // console.log('THIS IS A CLEAN TIME', cleanTime);
+                cleanedTime = tweetsTime.map(date => {
+                    const separateTime = date.split(' ');
+                    // console.log('this is separate time', separateTime);
+                    const cleantime = separateTime.slice(0, 4);
+                    // console.log('this is new clean time: ', cleantime);
+
+                    var finalTime = cleantime.join(' '); //.insert(3, 'at');
+                    console.log('this is final time: ', finalTime);
+                    return 'this is final time: ', finalTime;
+                });
 
                 for (i = 0; i < tweetsTime.length; i++) {
-                    finalTweetsArr[tweetsTime[i]] = tweetsText[i];
+                    finalTweetsArr[cleanedTime[i]] = tweetsText[i];
                 }
 
                 // (finalTweetsArr = {}),
