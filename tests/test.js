@@ -43,3 +43,15 @@ const videolistCall = helpers.apiYoutube
 test('check if youtube list of video Api result is object', () => {
     expect(typeof videolistCall.then(x => x)).toBe('object');
 });
+
+// test YoutubeApi call for array of videos gets objects
+const getListOfVideos = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data))
+    .then(data => helpers.apiYoutube.videolist(data))
+    .then(data => helpers.apiYoutube.arrayOfVideos(data));
+
+getListOfVideos.then(x => console.log(typeof x));
+test('check if youtube list of videos type is object', () => {
+    expect(typeof getListOfVideos.then(x => x)).toBe('object');
+});
