@@ -8,16 +8,14 @@ const client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-Array.prototype.insert = function(index, item) {
-    this.splice(index, 0, item);
-};
-
+// ***TO BE PROPERLY REFERENCED AND USED - SO FAR USELESS HERE***
 const cleanTimeFunc = timeArr => {
     timeArr.map(date => {
         const separateTime = date.split(' ');
         // console.log('this is separate time', separateTime);
         const cleantime = separateTime.slice(0, 4);
         // console.log('this is new clean time: ', cleantime);
+        cleantime.splice(3, 0, 'at');
 
         var finalTime = cleantime.join(' '); //.insert(3, 'at');
         // console.log('this is final time: ', finalTime);
@@ -42,15 +40,13 @@ const handleTweets = search =>
                 // console.log(tweets);
 
                 // HOW TO REFERENCE THE FUNC ABOVE?
-
-                console.log('supposedly clean time', tweetsTime);
-                // console.log('THIS IS A CLEAN TIME', cleanTime);
+                // get rid of unnecessary info in date
                 cleanedTime = tweetsTime.map(date => {
                     const separateTime = date.split(' ');
                     console.log('this is separate time', separateTime);
                     const cleantime = separateTime.slice(0, 4);
                     // var at = 'at';
-                    cleantime.splice(2, 0, 'at');
+                    cleantime.splice(3, 0, 'at');
                     // var cleantime = cleantim.splice(2, 0, at);
 
                     console.log('this is new clean time: ', cleantime);
