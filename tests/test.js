@@ -16,10 +16,19 @@ test('check if youtube channel Api result is object', () => {
 // test YoutubeApi call is working ( 2 of 4)
 const channelCall = helpers.apiYoutube.channel('metallica');
 
-channelCall.then(x => console.log(x));
+// channelCall.then(x => console.log(x));
 // console.log(channelCall);
 test('check if youtube playlist Api result is object', () => {
     expect(typeof channelCall.then(x => x)).toBe('object');
 });
 
 // test YoutubeApi call is working ( 3 of 4)
+const playlistCall = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data));
+
+playlistCall.then(x => console.log(x));
+// console.log(channelCall);
+test('check if youtube video Api result is object', () => {
+    expect(typeof playlistCall.then(x => x)).toBe('object');
+});
