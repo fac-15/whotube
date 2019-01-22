@@ -1,15 +1,18 @@
 <h1>YouTube</h1>
 <ul>
   {{#each youtubeArr}}
-  
+
   <iframe src='https://www.youtube.com/embed/{{this}}'> </iframe>
   {{/each}}
 </ul>
 
 
-  <ul> 
+<ul>
   {{#each twitterArr}}
   <li>{{this}}</li>
-  
-   {{/each}} 
-  </ul>
+
+  {{/each}}
+</ul>
+<p>If you think this is the incorrect Twitter account, or there are no tweets shown, please click here to search
+  manually</p>
+<a href="/re-search"><button>re-search</button></a>
