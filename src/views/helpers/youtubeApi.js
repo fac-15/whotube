@@ -17,17 +17,20 @@ const channelUrl = 'channels?part=contentDetails&id=';
 // youtube api 3
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
-// const arr = [];
-
 const getYoutubeChannel = (search) => {
+    console.log("inside getYoutubeChannel:")
     return new Promise((resolve, reject) => {
         fetch(`${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`)
-            .then(response => resolve(response.json()))
+            .then(response => {
+           console.log("inside getYoutubeChannel: Promise")
+                resolve(response.json())})
+            
     })
 }
 
-const getYoutubePlaylist = (data) => {
-    const channelId = data.items[0].id.channelId;
+const getYoutubePlaylist = (channelData) => {
+    const channelId = channelData.items[0].id.channelId;
+    console.log("inside getYoutubePlaylist:")
     return new Promise((resolve, reject) => {
         fetch(
             `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
@@ -35,9 +38,10 @@ const getYoutubePlaylist = (data) => {
     })
 }
 
-const getYoutubeVideolist = (data) => {
+const getYoutubeVideolist = (playlistData) => {
     const playListId =
-        data.items[0].contentDetails.relatedPlaylists.uploads;
+        playlistData.items[0].contentDetails.relatedPlaylists.uploads;
+        console.log("inside getYoutubeVideolist:")
     return new Promise((resolve, reject) => {
         fetch(
             `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
@@ -45,11 +49,13 @@ const getYoutubeVideolist = (data) => {
     })
 }
 
-const arrayId = (data) => {
+const arrayId = (videoData) => {
     const videoId = []; //array of videoId
+    console.log("inside arrayId:")
     return new Promise((resolve, reject) => {
         for (let i = 0; i < 4; i++) {
-            videoId.push(data.items[i].snippet.resourceId.videoId);
+            videoId.push(videoData.items[i].snippet.resourceId.videoId);
+            console.log("YoutubeApi-videoId:",videoId)
         }
         resolve(videoId);
     })
