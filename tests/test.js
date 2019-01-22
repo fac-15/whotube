@@ -18,7 +18,7 @@ test('check if youtube channel Api result is object', () => {
 // test YoutubeApi call is working ( 2 of 4)
 const channelCall = helpers.apiYoutube.channel('metallica');
 
-channelCall.then(x => console.log(x));
+// channelCall.then(x => console.log(x));
 // console.log(channelCall);
 test('check if youtube playlist Api result is object', () => {
     expect(typeof channelCall.then(x => x)).toBe('object');
@@ -35,3 +35,35 @@ describe('Test the root path', () => {
 });
 
 // test YoutubeApi call is working ( 3 of 4)
+const playlistCall = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data));
+
+// playlistCall.then(x => console.log(x));
+// console.log(channelCall);
+test('check if youtube video Api result is object', () => {
+    expect(typeof playlistCall.then(x => x)).toBe('object');
+});
+
+// test YoutubeApi call is working ( 4 of 4)
+const videolistCall = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data))
+    .then(data => helpers.apiYoutube.videolist(data));
+
+// videolistCall.then(x => console.log(x));
+test('check if youtube list of video Api result is object', () => {
+    expect(typeof videolistCall.then(x => x)).toBe('object');
+});
+
+// test YoutubeApi call for array of videos gets objects
+const getListOfVideos = helpers.apiYoutube
+    .channel('metallica')
+    .then(data => helpers.apiYoutube.playlist(data))
+    .then(data => helpers.apiYoutube.videolist(data))
+    .then(data => helpers.apiYoutube.arrayOfVideos(data));
+
+getListOfVideos.then(x => console.log(typeof x));
+test('check if youtube list of videos type is object', () => {
+    expect(typeof getListOfVideos.then(x => x)).toBe('object');
+});
