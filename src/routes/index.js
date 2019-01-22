@@ -19,10 +19,14 @@ router.post('/', (req, res) => {
 router.get('/results/:search', (req, response) => {
     let search = req.url.split('/');
     search = search[search.length - 1];
+    console.log(search)
     console.log('inside router.get');
 
-    const resultY = helpers.apicall(search);
+    const resultY = helpers.apicall.channel(search).then(data => helpers.apicall.playlist(data)).then(data => helpers.apicall.videolist(data)).then(data => helpers.apicall.arrayOfVideos(data));
+    console.log("youtube array: ", resultY)
+
     const resultT = helpers.apitweets(search);
+    
     // make call to get array with 0 being videIDs and 1 being tweets
     Promise.all([resultY, resultT])
     .then(values => 
@@ -33,6 +37,12 @@ router.get('/results/:search', (req, response) => {
             }
         )
     )
+    
+
+    // if (error) {
+    //     console.log('error in getData: ', error);
+    // } else {
+    //     console.log('ROUTES => apicall response: ', response);
 });
 
 module.exports = router;

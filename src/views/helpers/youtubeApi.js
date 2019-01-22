@@ -17,57 +17,85 @@ const channelUrl = 'channels?part=contentDetails&id=';
 // youtube api 3
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
-// const arr = [];
-
-const youtubeApi = search => {
-    // console.log('search in GET', search);
-
+const getYoutubeChannel = (search) => {
+    console.log("inside getYoutubeChannel:")
     return new Promise((resolve, reject) => {
         fetch(`${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`)
-            .then(response => response.json())
-            .then(data => {
-                const channelId = data.items[0].id.channelId;
-                // console.log('channel id', channelId);
-                return fetch(
-                    `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
-                );
-            })
-            .then(response => response.json())
-            .then(data => {
-                const playListId =
-                    data.items[0].contentDetails.relatedPlaylists.uploads;
-                // console.log('this is playListId ', playListId);
-                return fetch(
-                    `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
-                );
-            })
-            .then(response => response.json())
-            .then(data => {
-                const videoId = []; //array of videoId
-                for (let i = 0; i < 4; i++) {
-                    videoId.push(data.items[i].snippet.resourceId.videoId);
-                }
-                // console.log(videoId);
-                resolve(videoId);
-            })
-            .catch(error => {
-                console.log('youtube error ', error);
-            });
-    });
+            .then(response => {
+           console.log("inside getYoutubeChannel: Promise")
+                resolve(response.json())})
+            
+    })
+}
 
-    // .then(videoId => {
-    //     console.log('inside final then');
-    //     arr.push(videoId);
-    //     console.log(arr);
-    //     return arr;
-    // })
-    //
-    // twitter
-    // .then(() => arr.push(handleTweets(search)))
+const getYoutubePlaylist = (channelData) => {
+    const channelId = channelData.items[0].id.channelId;
+    console.log("inside getYoutubePlaylist:")
+    return new Promise((resolve, reject) => {
+        fetch(
+            `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
+        ).then(response => resolve(response.json()))
+    })
+}
 
-    // .catch(error => {
-    //     console.log('twitter error ', error);
-    // });
-};
+const getYoutubeVideolist = (playlistData) => {
+    const playListId =
+        playlistData.items[0].contentDetails.relatedPlaylists.uploads;
+        console.log("inside getYoutubeVideolist:")
+    return new Promise((resolve, reject) => {
+        fetch(
+            `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
+        ).then(response => resolve(response.json()))
+    })
+}
 
-module.exports = youtubeApi;
+const arrayId = (videoData) => {
+    const videoId = []; //array of videoId
+    console.log("inside arrayId:")
+    return new Promise((resolve, reject) => {
+        for (let i = 0; i < 4; i++) {
+            videoId.push(videoData.items[i].snippet.resourceId.videoId);
+            console.log("YoutubeApi-videoId:",videoId)
+        }
+        resolve(videoId);
+    })
+}
+
+
+
+
+// const youtubeApi = search => {
+
+//     // console.log('search in GET', search);
+
+
+//     const getYoutubePlaylist = 
+//     return new Promise((resolve, reject) => {
+
+
+//         .catch(error => {
+//             console.log('youtube error ', error);
+//         });
+// });
+
+// .then(videoId => {
+//     console.log('inside final then');
+//     arr.push(videoId);
+//     console.log(arr);
+//     return arr;
+// })
+//
+// twitter
+// .then(() => arr.push(handleTweets(search)))
+
+// .catch(error => {
+//     console.log('twitter error ', error);
+// });
+
+
+module.exports = {
+    channel: getYoutubeChannel,
+    playlist: getYoutubePlaylist,
+    videolist: getYoutubeVideolist,
+    arrayOfVideos: arrayId
+}

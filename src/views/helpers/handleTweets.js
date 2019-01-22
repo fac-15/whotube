@@ -8,8 +8,8 @@ const client = new Twitter({
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
 
-const handleTweets = search => {
-    return new Promise((resolve, reject) => {
+const handleTweets = search => (
+    new Promise((resolve, reject) => {
         const tweetsArr = [];
         const params = { screen_name: search, count: 10 };
         client.get('statuses/user_timeline', params, (error, tweets) => {
@@ -22,7 +22,7 @@ const handleTweets = search => {
                 resolve(tweetsArr);
             }
         });
-    });
-};
+    })
+);
 
 module.exports = handleTweets;
