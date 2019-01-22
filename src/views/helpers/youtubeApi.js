@@ -54,6 +54,7 @@ const arrayId = videoData => {
     const videoId = []; //array of videoId
     console.log('inside arrayId:');
     return new Promise((resolve, reject) => {
+        setTimeout(() => reject('Whoops!'), 1000);
         for (let i = 0; i < 4; i++) {
             videoId.push(videoData.items[i].snippet.resourceId.videoId);
             console.log('YoutubeApi-videoId:', videoId);

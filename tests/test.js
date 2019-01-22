@@ -1,5 +1,5 @@
 // const handleTweets = require('');
-const func = require('../src/views/helpers/getData.js');
+// const func = require('../src/views/helpers/getData.js');
 const sum = require('./test-sum.js');
 const helpers = require('../src/views/helpers/index.js');
 
