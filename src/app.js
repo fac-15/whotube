@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
-const favicon = require('serve-favicon');
+// const favicon = require('serve-favicon');
 
 const cors = require('cors');
 const morgan = require('morgan');
@@ -19,12 +19,9 @@ app.use(bodyParser.json());
 
 app.use(morgan('tiny'));
 app.use(cors());
-
-// app.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')));
-
-app.use(express.static(path.join(__dirname, '..', 'public')));
-app.set("views", path.join(__dirname, "views"));
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
 app.engine(
     'hbs',
     handlebars({
@@ -37,5 +34,10 @@ app.engine(
 
 app.set('port', process.env.PORT || 5000);
 app.use(routes);
+app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(express.static(path.join(__dirname, '/public')));
+
+//sets an express static route and links the favicon
+app.use('/public', express.static('public'));
 
 module.exports = app;
