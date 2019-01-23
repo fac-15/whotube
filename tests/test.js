@@ -58,6 +58,8 @@ getListOfVideos.then(x => console.log(typeof x));
 test('check if youtube list of videos type is object', () => {
     expect(typeof getListOfVideos.then(x => x)).toBe('object');
 });
+<<<<<<< HEAD
+=======
 
 describe('Test the root path', () => {
     test('It should response the GET method', () => {
@@ -68,3 +70,4 @@ describe('Test the root path', () => {
             });
     });
 });
+>>>>>>> staging
