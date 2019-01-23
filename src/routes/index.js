@@ -30,6 +30,7 @@ router.get('/results/:search', (req, response) => {
     console.log('youtube array: ', resultY);
 
     const resultT = helpers.apiTweets(search);
+    console.log('THIS IS resultT: ', resultT);
 
     // make call to get array with 0 being videIDs and 1 being tweets
     Promise.all([resultY, resultT])
