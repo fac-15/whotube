@@ -10,7 +10,7 @@ const client = new Twitter({
 
 // ***TO BE PROPERLY REFERENCED AND USED - SO FAR USELESS HERE***
 const cleanTimeFunc = timeArr => {
-    var arr = [];
+    const arr = [];
     timeArr.map(date => {
         const separateTime = date.split(' ');
         // console.log('this is separate time', separateTime);
@@ -18,10 +18,11 @@ const cleanTimeFunc = timeArr => {
         // console.log('this is new clean time: ', cleantime);
         cleantime.splice(3, 0, 'at');
 
-        var finalTime = cleantime.join(' '); //.insert(3, 'at');
+        const finalTime = cleantime.join(' '); //.insert(3, 'at');
         // console.log('this is final time: ', finalTime);
         // return 'this is final time: ', finalTime;
         arr.push(finalTime);
+        return arr;
     });
     return arr;
 };
@@ -41,12 +42,12 @@ const handleTweets = search => {
             } else {
                 tweets.forEach(item => tweetsText.push(item.text));
                 tweets.forEach(item => tweetsTime.push(item.created_at));
-                console.log('THIS IS CLEANED TWEET ARR: ', tweetsTime);
+                // console.log('THIS IS CLEANED TWEET ARR: ', tweetsTime);
 
                 cleanedTime = [...cleanTimeFunc(tweetsTime)];
-                console.log('THIS IS CLEANED TWEET ARR: ', cleanedTime);
+                // console.log('THIS IS CLEANED TWEET ARR: ', cleanedTime);
 
-                for (i = 0; i < tweetsTime.length; i++) {
+                for (let i = 0; i < tweetsTime.length; i++) {
                     finalTweetsArr[cleanedTime[i]] = tweetsText[i];
                 }
 
@@ -63,6 +64,8 @@ const handleTweets = search => {
                     finalTweetsArr
                 );
                 // return tweetsArr;
+                // console.log('THIS IS THE FINAL OBJ', finalTweetsArr);
+
                 resolve(finalTweetsArr);
             }
         });
