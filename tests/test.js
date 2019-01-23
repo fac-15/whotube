@@ -2,6 +2,8 @@
 // const func = require('../src/views/helpers/getData.js');
 const sum = require('./test-sum.js');
 const helpers = require('../src/views/helpers/index.js');
+const request = require('supertest');
+const app = require('../src/routes/index.js');
 
 // JEST test on basic fucntion is working
 test('adds 1+2 to equal 3', () => {
@@ -56,3 +58,16 @@ getListOfVideos.then(x => console.log(typeof x));
 test('check if youtube list of videos type is object', () => {
     expect(typeof getListOfVideos.then(x => x)).toBe('object');
 });
+<<<<<<< HEAD
+=======
+
+describe('Test the root path', () => {
+    test('It should response the GET method', () => {
+        request(app)
+            .get('/')
+            .then(response => {
+                expect(response.statusCode).toBe(200);
+            });
+    });
+});
+>>>>>>> staging
