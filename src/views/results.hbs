@@ -17,7 +17,25 @@
 
 <ul>
   {{#each twitterArr}}
+
+  <li>{{@key}}: {{this}}</li>
+
+  {{/each}}
+
+</ul>
+{{!--
+<ul>
+
+  {{#each object}}
+  {{@key}}: {{this}}
+  {{/each}}
+
   <li>{{this}}</li>
 
   {{/each}}
-</ul>
+</ul> --}}
+
+
+<p>If you think this is the incorrect Twitter account, or there are no tweets shown, please click here to search
+  manually</p>
+<a href="/re-search"><button>re-search</button></a>
