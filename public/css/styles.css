@@ -1,4 +1,10 @@
 body {
   font-family: 'Titillium Web', sans-serif;
-  background-color: gray;
+  color: red;
+  font-size: 20px;
+}
+
+li {
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size: 20px;
 }
