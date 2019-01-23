@@ -10,6 +10,7 @@ const client = new Twitter({
 
 // ***TO BE PROPERLY REFERENCED AND USED - SO FAR USELESS HERE***
 const cleanTimeFunc = timeArr => {
+    var arr = [];
     timeArr.map(date => {
         const separateTime = date.split(' ');
         // console.log('this is separate time', separateTime);
@@ -19,8 +20,10 @@ const cleanTimeFunc = timeArr => {
 
         var finalTime = cleantime.join(' '); //.insert(3, 'at');
         // console.log('this is final time: ', finalTime);
-        return 'this is final time: ', finalTime;
+        // return 'this is final time: ', finalTime;
+        arr.push(finalTime);
     });
+    return arr;
 };
 
 const handleTweets = search =>
@@ -37,24 +40,10 @@ const handleTweets = search =>
             } else {
                 tweets.forEach(item => tweetsText.push(item.text));
                 tweets.forEach(item => tweetsTime.push(item.created_at));
-                // console.log(tweets);
+                console.log('THIS IS CLEANED TWEET ARR: ', tweetsTime);
 
-                // HOW TO REFERENCE THE FUNC ABOVE?
-                // get rid of unnecessary info in date
-                cleanedTime = tweetsTime.map(date => {
-                    const separateTime = date.split(' ');
-                    console.log('this is separate time', separateTime);
-                    const cleantime = separateTime.slice(0, 4);
-                    // var at = 'at';
-                    cleantime.splice(3, 0, 'at');
-                    // var cleantime = cleantim.splice(2, 0, at);
-
-                    console.log('this is new clean time: ', cleantime);
-
-                    var finalTime = cleantime.join(' '); //.insert(3, 'at');
-                    console.log('this is final time: ', finalTime);
-                    return 'this is final time: ', finalTime;
-                });
+                cleanedTime = [...cleanTimeFunc(tweetsTime)];
+                console.log('THIS IS CLEANED TWEET ARR: ', cleanedTime);
 
                 for (i = 0; i < tweetsTime.length; i++) {
                     finalTweetsArr[cleanedTime[i]] = tweetsText[i];

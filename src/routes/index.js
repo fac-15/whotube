@@ -19,7 +19,7 @@ router.post('/', (req, res) => {
 router.get('/results/:search', (req, response) => {
     let search = req.url.split('/');
     search = search[search.length - 1];
-    console.log(search);
+    console.log('THIS IS THE SEARCH: ', search);
     console.log('inside router.get');
 
     const resultY = helpers.apiYoutube
