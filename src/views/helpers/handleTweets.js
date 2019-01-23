@@ -1,5 +1,6 @@
 const Twitter = require('twitter');
 require('dotenv').config();
+const cleanTimeFunc = require('./cleanTimeFunc.js');
 
 const client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
@@ -9,23 +10,23 @@ const client = new Twitter({
 });
 
 // ***TO BE PROPERLY REFERENCED AND USED - SO FAR USELESS HERE***
-const cleanTimeFunc = timeArr => {
-    const arr = [];
-    timeArr.map(date => {
-        const separateTime = date.split(' ');
-        // console.log('this is separate time', separateTime);
-        const cleantime = separateTime.slice(0, 4);
-        // console.log('this is new clean time: ', cleantime);
-        cleantime.splice(3, 0, 'at');
+// const cleanTimeFunc = timeArr => {
+//     const arr = [];
+//     timeArr.map(date => {
+//         const separateTime = date.split(' ');
+//         // console.log('this is separate time', separateTime);
+//         const cleantime = separateTime.slice(0, 4);
+//         // console.log('this is new clean time: ', cleantime);
+//         cleantime.splice(3, 0, 'at');
 
-        const finalTime = cleantime.join(' '); //.insert(3, 'at');
-        // console.log('this is final time: ', finalTime);
-        // return 'this is final time: ', finalTime;
-        arr.push(finalTime);
-        return arr;
-    });
-    return arr;
-};
+//         const finalTime = cleantime.join(' '); //.insert(3, 'at');
+//         // console.log('this is final time: ', finalTime);
+//         // return 'this is final time: ', finalTime;
+//         arr.push(finalTime);
+//         return arr;
+//     });
+//     return arr;
+// };
 
 const handleTweets = search => {
     return new Promise((resolve, reject) => {
