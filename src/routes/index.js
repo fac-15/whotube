@@ -32,17 +32,62 @@ router.get('/results/:search', (req, response) => {
     const resultT = helpers.apiTweets(search);
 
     // make call to get array with 0 being videIDs and 1 being tweets
-    Promise.all([resultY, resultT]).then(values =>
-        response.render('results', {
-            youtubeArr: values[0],
-            twitterArr: values[1]
+    Promise.all([resultY, resultT])
+        .then(values => {
+            console.log(values);
+            response.render('results', {
+                youtubeArr: values[0],
+                twitterArr: values[1]
+            });
         })
-    );
+        .catch(() => {
+            response.redirect(302, '/re-search');
+        });
+});
 
-    // if (error) {
-    //     console.log('error in getData: ', error);
-    // } else {
-    //     console.log('ROUTES => apiYoutube response: ', response);
+router.get('/re-search', (req, response) => {
+    response.render('re-search');
+});
+
+router.post('/re-search', (req, res) => {
+    //'search' needs to match the 'name' attribute of the input tag in the form
+    const searchYoutube = req.body.searchYoutube;
+    const searchTwitter = req.body.searchTwitter;
+    res.redirect(`/results/${searchYoutube}/${searchTwitter}`);
+});
+
+router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
+    let searchYoutube = req.url.split('/');
+    searchYoutube = searchYoutube[searchYoutube.length - 2];
+    searchYoutube = searchYoutube.replace('&', '+and+');
+
+    console.log('get seperate result YT: ', searchYoutube);
+
+    let searchTwitter = req.url.split('/');
+    searchTwitter = searchTwitter[searchTwitter.length - 1];
+    console.log('get seperate result TW: ', searchTwitter);
+
+    const resultY = helpers.apiYoutube
+        .channel(searchYoutube)
+        .then(data => helpers.apiYoutube.playlist(data))
+        .then(data => helpers.apiYoutube.videolist(data))
+        .then(data => helpers.apiYoutube.arrayOfVideos(data));
+    console.log('youtube array: ', resultY);
+
+    const resultT = helpers.apiTweets(searchTwitter);
+
+    // make call to get array with 0 being videIDs and 1 being tweets
+    Promise.all([resultY, resultT])
+        .then(values => {
+            console.log(values);
+            response.render('results', {
+                youtubeArr: values[0],
+                twitterArr: values[1]
+            });
+        })
+        .catch(() => {
+            response.redirect(302, '/');
+        });
 });
 
 module.exports = router;
