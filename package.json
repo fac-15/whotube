@@ -10,7 +10,7 @@
         "start": "node src/index.js",
         "dev": "nodemon src/index.js",
         "build": "src/index.js",
-        "test": "jest --coverage"
+        "test": "jest --coverage --forceExit"
     },
     "repository": {
         "type": "git",
@@ -37,6 +37,7 @@
         "node-fetch": "^2.3.0",
         "nodemon": "^1.18.9",
         "serve-favicon": "^2.5.0",
+        "supertest": "^3.4.2",
         "twitter": "^1.7.1"
     },
     "devDependencies": {
