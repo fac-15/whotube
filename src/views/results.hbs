@@ -1,18 +1,19 @@
 <h1>YouTube</h1>
-<ul>
+<ul id="y-t">
   {{#each youtubeArr}}
 
-  <iframe src='https://www.youtube.com/embed/{{this}}'> </iframe>
+  <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'> </iframe>
   {{/each}}
 </ul>
 
 
-<ul>
+<ul id="t-w">
   {{#each twitterArr}}
   <li>{{this}}</li>
 
   {{/each}}
 </ul>
-<p>If you think this is the incorrect Twitter account, or there are no tweets shown, please click here to search
-  manually</p>
-<a href="/re-search"><button>re-search</button></a>
+<p>If you think this is the incorrect YouTube or Twitter account, </p>
+<p>or there are no tweets shown, </p>
+<p>please search manually: </p>
+<a href="/re-search"><button class="re-search">Re-Search</button></a>
