@@ -27,8 +27,8 @@ const cleanTimeFunc = timeArr => {
     return arr;
 };
 
-const handleTweets = search =>
-    new Promise((resolve, reject) => {
+const handleTweets = search => {
+    return new Promise((resolve, reject) => {
         const tweetsText = [];
         const tweetsTime = [];
         const finalTweetsArr = {};
@@ -58,12 +58,18 @@ const handleTweets = search =>
                 // for (i = 0; i < keys.length; i++) {
                 //     r[keys[i]] = values[i];
                 // }
-                // console.log('tweetsArr:', tweetsArr);
+                console.log(
+                    'THIS IS THE OBJECT: ',
+                    'tweetsArr:',
+                    finalTweetsArr
+                );
                 // return tweetsArr;
                 // console.log('THIS IS THE FINAL OBJ', finalTweetsArr);
+
                 resolve(finalTweetsArr);
             }
         });
     });
+};
 
 module.exports = handleTweets;
