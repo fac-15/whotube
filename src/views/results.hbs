@@ -3,7 +3,7 @@
 <div class="boxesY">
   {{!-- <ul id="y-t"> --}}
     {{#each youtubeArr}}
-     {{!-- <img src="./public/play.png" alt="play" width = 100%> --}}
+     <img src="/public/play.png" alt="play" width = 8%>
       <div class = "width">
         <div class = "videoWrapper">
           <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}' class box> </iframe>
@@ -38,7 +38,7 @@
     {{#each twitterArr}}
     <img src="/public/bird.png" alt="bird" width = 8%>
                          
-    <li>{{@key}}: {{this}}</li><hr>
+    <li class="tweet"><span class="date-time">{{@key}}:</span> {{this}}</li><hr>
     {{/each}}
     
   </ul>
