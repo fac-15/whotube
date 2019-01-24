@@ -18,12 +18,12 @@ const channelUrl = 'channels?part=contentDetails&id=';
 const videoListUrl = 'playlistItems?part=snippet&playlistId=';
 
 const getYoutubeChannel = search => {
-    console.log('inside getYoutubeChannel:');
-    return new Promise((resolve, reject) => {
+    // console.log('inside getYoutubeChannel:');
+    return new Promise(resolve => {
         fetch(
             `${youtubeBaseUrl}${userNameUrl}${search}&key=${youtubeKey}`
         ).then(response => {
-            console.log('inside getYoutubeChannel: Promise');
+            // console.log('inside getYoutubeChannel: Promise');
             resolve(response.json());
         });
     });
@@ -31,8 +31,8 @@ const getYoutubeChannel = search => {
 
 const getYoutubePlaylist = channelData => {
     const channelId = channelData.items[0].id.channelId;
-    console.log('inside getYoutubePlaylist:');
-    return new Promise((resolve, reject) => {
+    // console.log('inside getYoutubePlaylist:');
+    return new Promise(resolve => {
         fetch(
             `${youtubeBaseUrl}${channelUrl}${channelId}&key=${youtubeKey}`
         ).then(response => resolve(response.json()));
@@ -42,8 +42,8 @@ const getYoutubePlaylist = channelData => {
 const getYoutubeVideolist = playlistData => {
     const playListId =
         playlistData.items[0].contentDetails.relatedPlaylists.uploads;
-    console.log('inside getYoutubeVideolist:');
-    return new Promise((resolve, reject) => {
+    // console.log('inside getYoutubeVideolist:');
+    return new Promise(resolve => {
         fetch(
             `${youtubeBaseUrl}${videoListUrl}${playListId}&key=${youtubeKey}`
         ).then(response => resolve(response.json()));
@@ -52,12 +52,11 @@ const getYoutubeVideolist = playlistData => {
 
 const arrayId = videoData => {
     const videoId = []; //array of videoId
-    console.log('inside arrayId:');
-    return new Promise((resolve, reject) => {
-        setTimeout(() => reject('Whoops!'), 1000);
+    // console.log('inside arrayId:');
+    return new Promise(resolve => {
         for (let i = 0; i < 4; i++) {
             videoId.push(videoData.items[i].snippet.resourceId.videoId);
-            console.log('YoutubeApi-videoId:', videoId);
+            // console.log('YoutubeApi-videoId:', videoId);
         }
         resolve(videoId);
     });
