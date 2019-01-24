@@ -6,7 +6,7 @@
 ![](https://i.imgur.com/ryta2Ep.png)
 # WhoTube? 
 
-A web app for those who want to keep their favourite youtubers latest videos and tweets in one page, always under control!
+A web app for those who want to keep their favourite youtubers' latest videos and tweets in one page, always under control!
 
 ## User instructions :books:
 
@@ -17,38 +17,34 @@ Geeky version:
 * ask us for the keys!:key:
 * ```npm run dev```
 * go to your on ```http://localhost:5000/```
-or, &nbsp;
+
+or more simply, &nbsp;
 - navigate to https://whotube.herokuapp.com
-- madona ladra
 
 
-## Logo ideas....
+## Logo ideas:
+Whooootube! The owl idea came out quite randomly, but we liked how it sounds.
 ![](https://cdn.dribbble.com/users/20931/screenshots/2518827/trivify_g1_dribbble.gif)
 
-![](https://cdn.dribbble.com/users/1487848/screenshots/3590275/buho.gif)
-
-![](https://i.imgur.com/4R3krGk.png)
-
-![](https://i.imgur.com/quBhwVY.png)
-
-![](https://i.imgur.com/FVsZOgd.gif)
-
-## User story
+## User stories :eyeglasses:
 
 1. As a user, I want to be able to enter a youtuber's username and see their most recent videos.
 2. As a user, I want to be able to see their twitter too.
 3. As a user, I want to see the text and the video large enough to be read and watched.
-4. As a user, I want to create a list of my favourite youtubers and sort them as I want.
-5. As a user, I want to be able to remove a single video or tweet if I want to.
-6. As a user, I want to show only certain types of social media, either videos or tweets.
-7. As a user, I want to see the date and time of the video and the tweet.
-8. As a user, I want to see some separation between one video/tweet and the next.
-9. As a authenticated user, I want to see my saved profiles when I log into the app.
+4. As a user, I want to be able to refresh the page in order to see if the youtuber I follow has updated their profile.
 
-
-## YouTube AP
+## YouTube API 
 
 * We overcame quite complicated documentation to successfully retrieve the data we wanted.
-* We can get the Channel ID for the channel with the selected name.
-* 
-* We can search for any YouTube Channel and we recieve their 5 most recently posted video ID's
+* Through a nested list of 3 API calls we can:
+    1) retrive the Channel ID for a selected youtuber,
+    2) then look for the playlist,
+    3) finally the latest videos.
+* We worked in order to make sure the search function would be able to interpret the user input in most cases. 
+Should the word that the user input lead to partial or any result at all (e.g. youtube and twitter accounts have different names), the user will have che chance to manually add youtube and twitter user names in two dedicated searchboxes.
+
+## Twitter API
+
+* Starting from the same inpout search, unless the youtuber had a different name for their twitter account (see above), the latest 10 tweets will be displayed alongside the latest videos.
+* We added date and time to the tweets in order to make it easier for user to tell most recent tweets from the least.
+
