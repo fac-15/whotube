@@ -1,20 +1,15 @@
 {{> header}}
+
 <div class="boxesY">
-  {{!-- <ul id="y-t"> --}}
-    {{#each youtubeArr}}
-    <div class="width">
-      <div class="videoWrapper">
-        <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'>
-        </iframe>
-      </div>
+  {{#each youtubeArr}}
+  <div class="width">
+    <div class="videoWrapper">
+      <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'>
+      </iframe>
     </div>
-    {{/each}}
-    {{!--
-  </ul> --}}
+  </div>
+  {{/each}}
 </div>
-
-
-
 
 {{!--
 <div class="videoWrapper">
@@ -23,26 +18,13 @@
     allowfullscreen></iframe>
 </div> --}}
 
-
-
-
-
-
-
-
-
-
-
-
 <div class="boxesT">
   <ul id="t-w">
     {{#each twitterArr}}
     <img src="/public/bird.png" alt="bird" width=8%>
-
     <li class="tweet"><span class="date-time">{{@key}}:</span> {{this}}</li>
     <hr>
     {{/each}}
-
   </ul>
 
   <p>If you think this is the incorrect YouTube or Twitter account, </p>
