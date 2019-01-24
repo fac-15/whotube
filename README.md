@@ -6,7 +6,7 @@
 ![](https://i.imgur.com/ryta2Ep.png)
 # WhoTube? 
 
-A web app for those who want to keep their favourite youtubers latest videos and tweets in one page, always under control!
+A web app for those who want to keep their favourite youtubers' latest videos and tweets in one page, always under control!
 
 ## User instructions :books:
 
@@ -38,7 +38,7 @@ Whooootube! The owl idea came out quite randomly, but we liked how it sounds.
 8. As a user, I want to see some separation between one video/tweet and the next.
 9. As a authenticated user, I want to see my saved profiles when I log into the app.
 
-## YouTube API
+## YouTube API ![https://i.imgur.com/zCeOVgy.png]
 
 * We overcame quite complicated documentation to successfully retrieve the data we wanted.
 * Through a nested list of 3 API calls we can:
@@ -51,7 +51,7 @@ Should the word that the user input lead to partial or any result at all (e.g. y
 ## Twitter API
 
 * Starting from the same inpout search, unless the youtuber had a different name for their twitter account (see above), the latest 10 tweets will be displayed alongside the latest videos.
-* We added date and time to the tweets oin order to
+* We added date and time to the tweets in order to make it easier for user to tell most recent tweets from the least.
 
 ## Stretch Goals
 We had many stretch goals, we wish we had more time to dedicate to each one of them. We had to scale down our scope to be able to guarantee a good Minimum Viable Product, but we plan on going back to the stretch goals to improve WhoTube.
