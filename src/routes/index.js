@@ -38,7 +38,8 @@ router.get('/results/:search', (req, response) => {
             // console.log(values);
             response.render('results', {
                 youtubeArr: values[0],
-                twitterArr: values[1]
+                twitterArr: values[1],
+                name: search
             });
         })
         .catch(() => {
@@ -61,7 +62,8 @@ router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
     let searchYoutube = req.url.split('/');
     searchYoutube = searchYoutube[searchYoutube.length - 2];
     searchYoutube = searchYoutube.replace('&', '+and+');
-
+    //replace %20 from url in order to display clean nickname
+    const searchYoutubeClean = searchYoutube.replace(/%20/g, ' ');
     // console.log('get seperate result YT: ', searchYoutube);
 
     let searchTwitter = req.url.split('/');
@@ -83,7 +85,8 @@ router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
             // console.log(values);
             response.render('results', {
                 youtubeArr: values[0],
-                twitterArr: values[1]
+                twitterArr: values[1],
+                name: searchYoutubeClean
             });
         })
         .catch(() => {

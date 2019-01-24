@@ -1,5 +1,7 @@
 {{> header}}
 <h1>YouTube</h1>
+<h2>Your search was for {{name}}</h2>
+
 <ul id="y-t">
   {{#each youtubeArr}}
   <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'> </iframe>
@@ -11,6 +13,11 @@
   <li>{{@key}}: {{this}}</li>
   {{/each}}
 </ul>
+
+{{#each name}}
+<h2>Your search was for {{this}}</h2>
+{{/each}}
+
 <p>If you think this is the incorrect YouTube or Twitter account, </p>
 <p>or there are no tweets shown, </p>
 <p>please search manually: </p>
