@@ -3,7 +3,11 @@
 [![Coverage Status](https://coveralls.io/repos/github/susanx/whotube/badge.svg?branch=master)](https://coveralls.io/github/susanx/whotube?branch=master)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/susanx/whotube)
 
-![](https://i.imgur.com/ryta2Ep.png)
+![](https://imgur.com/95LeuJ1)
+
+![](https://imgur.com/95LeuJ1)
+
+
 # WhoTube? 
 
 A web app for those who want to keep their favourite youtubers' latest videos and tweets in one page, always under control!
