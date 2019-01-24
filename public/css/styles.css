@@ -246,6 +246,7 @@ footer {
 
     #submit-button {
         border: 2px solid #778f8a;
+        border-radius: 25px;
         background-color: #ffc756;
         height: 44px;
         font-size: 16px;
