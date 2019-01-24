@@ -5,8 +5,6 @@
 
 ![](https://i.imgur.com/95LeuJ1.png)
 
-# WhoTube? 
-
 A web app for those who want to keep their favourite youtubers' latest videos and tweets in one page, always under control!
 
 ## User instructions :books:
