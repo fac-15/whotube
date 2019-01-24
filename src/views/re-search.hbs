@@ -1,9 +1,16 @@
 {{> title}}
-<form action="/re-search" method="post">
-    <p>Oops, this user seems to have different usernames for YouTube and Twitter, please search for each:</p>
-    <label for="searchYoutube">YouTube name:</label>
-    <input type="text" name="searchYoutube" class="video" required />
-    <label for="searchTwitter">Twitter handle:</label>
-    <input type="text" name="searchTwitter" class="tweet" required />
-    <input type="submit" class="re-search" value="Re-Search" />
+<form action="/re-search" method="post" class="search-box">
+    <p id="oops-intro"><span id="oops">Oops!</span><br /><br /> This youtuber seems to have different usernames for
+        YouTube and Twitter. <br /><br />
+        Please
+        search
+        seperately
+        for
+        each in the
+        boxes below:</p><br />
+    <label for="searchYoutube">YouTube name:</label><br />
+    <input type="text" name="searchYoutube" class="search-text" required /><br /><br /><br />
+    <label for="searchTwitter">Twitter handle:</label><br />
+    <input type="text" name="searchTwitter" class="search-text" required /><br /><br /><br />
+    <input type="submit" id="re-submit" value="Re-Search" />
 </form>

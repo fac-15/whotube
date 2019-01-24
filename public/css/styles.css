@@ -1,10 +1,323 @@
 body {
-  font-family: 'Titillium Web', sans-serif;
-  color: red;
-  font-size: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+    margin: 10px;
+    background-color: #d2faf2;
+}
+/* #b0f7e9 */
+/* #91e8d7 */
+/* #b9f0d4 */
+/* navbar */
+header {
+    margin: -10px;
+    padding: 15px;
+    width: 110%;
+    height: 70px;
+    position: fixed;
+    z-index: 1;
+    /* left: -0px; */
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(119, 118, 118, 0.12),
+        0 2px 4px 0 rgba(0, 0, 0, 0.08);
+}
+/* search box */
+/* Add a black background color to the top navigation bar */
+
+.owl-logo {
+    width: 16%;
 }
 
-li {
-  font-family: 'ZCOOL KuaiLe', cursive;
-  font-size: 20px;
+.owl-logo :hover {
+    width: 16%;
+    cursor: pointer;
+}
+/* search box*/
+.search-box {
+    position: absolute;
+    width: 226px;
+    height: 48px;
+    left: 65px;
+    top: 119px;
+    /* border: 1px solid #ccc; */
+    border-radius: 25px;
+}
+/* submit */
+#submit-button {
+    text-align: center;
+    align-self: center;
+    height: 30px;
+    margin-top: 60px;
+    /* border: 1px solid #ccc; */
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 800;
+    margin-left: 80px;
+}
+/* header on results page */
+
+#nav-search {
+    position: fixed;
+    width: 200px;
+    height: 48px;
+    /* border: 1px solid #ccc; */
+    border-radius: 25px;
+    right: 0;
+    top: 10px;
+    margin-right: 10px;
+    left: auto;
+}
+
+/* search text */
+.search-text {
+    position: fixed;
+    font-size: 16px;
+    font-weight: bold;
+    width: 226px;
+    height: 48px;
+    /* border: 1px solid #ccc; */
+    border-radius: 25px;
+    text-indent: 20px;
+}
+/* Select a YouTuber and view their videos with their Tweets */
+
+.intro {
+    position: absolute;
+    width: 220px;
+    height: 210px;
+    left: 74px;
+    top: 260px;
+    font-family: ABeeZee;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 31px;
+    font-size: 22px;
+    color: #000000;
+}
+
+h2#center {
+    margin: auto;
+    background: pink;
+}
+
+li,
+p {
+    font-family: 'san serif';
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 10px;
+    font-family: 'Sarabun', sans-serif;
+}
+
+hr {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* results */
+
+* {
+    box-sizing: border-box;
+}
+
+h2.yt {
+    background: #ccc;
+    width: 30%;
+}
+
+/* @media screen and (min-width: 900px){ */
+.boxesY {
+    /* background: #ccc; */
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 70%;
+    padding: 10px;
+}
+
+.boxesT {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    height: 300px; /* Should be removed. */
+}
+
+.boxesT img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+}
+
+.boxesV img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 8%;
+}
+
+/* iframe {
+      background-color: #f1f1f1;
+      width: 460px;
+      height: 300px;
+      margin: 10px;
+      text-align: center;
+      font-size: 30px;
+      list-style: none;  
+    } */
+/* test */
+/* #containingBlock Resizes the video based on the viewport width.  */
+/* #containingBlock {
+	width: 50%;
+} */
+/* wrapper-with-intrinsic-ratio */
+/* iframe {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+/* padding-top: 25px; */
+/* height: calc(100% /16 * 9); */
+
+.width {
+    width: 50%;
+}
+
+.iframe object,
+embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+/* 816 layout breakpoint----------------------------------------------*/
+@media screen and (max-width: 816px) {
+    .width {
+        width: 50%;
+    }
+
+    .iframe object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%-10;
+        height: 100%-7;
+        align: center;
+        background: plum;
+    }
+
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        align: center;
+        /* background: blueviolet; */
+    }
+}
+
+/* 650 Mobile----------------------------------------------*/
+@media screen and (max-width: 650px) {
+    body {
+        min-width: 340px;
+    }
+
+    #nav-search {
+        width: 180px;
+        height: 46px;
+        top: 13px;
+    }
+
+    .search-text {
+        /* border-style: ; */
+        border: 3px solid #a3c3bd;
+    }
+
+    #submit-button {
+        border: 2px solid #778f8a;
+        background-color: #ffc756;
+    }
+
+    #re-submit {
+        border: 2px solid #778f8a;
+        background-color: #ffc756;
+        text-align: center;
+        align-self: center;
+        height: 30px;
+        margin-top: 0px;
+        /* border: 1px solid #ccc; */
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 800;
+        margin-left: 65px;
+    }
+
+    .boxesY {
+        width: 100%;
+        display: block;
+        height: auto;
+        margin-top: 50px;
+        margin-left: -10px;
+    }
+
+    .boxesT {
+        width: 100%;
+        display: block;
+    }
+
+    .width {
+        width: 100%;
+    }
+
+    .videoWrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        min-width: 340px;
+        /* background: blueviolet; */
+        border-bottom: 2px solid white;
+    }
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .owl-logo {
+        width: 40%;
+    }
+
+    .date-time {
+        font-size: 15px;
+        color: #5898d5;
+    }
+
+    label {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    #oops-intro {
+        font-size: 18px;
+    }
+
+    #oops {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    #Layer_1 {
+        margin-top: 4px;
+    }
 }
