@@ -1,19 +1,52 @@
 {{> header}}
 <h1>YouTube</h1>
-<ul id="y-t">
-  {{#each youtubeArr}}
-  <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'> </iframe>
-  {{/each}}
-</ul>
+<div class="boxesY">
+  {{!-- <ul id="y-t"> --}}
+    {{#each youtubeArr}}
+     {{!-- <img src="./public/play.png" alt="play" width = 100%> --}}
+      <div class = "width">
+        <div class = "videoWrapper">
+          <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}' class box> </iframe>
+        </div>
+      </div>
+    {{/each}}
+  {{!-- </ul> --}}
+</div>
 
-<ul id="t-w">
-  {{#each twitterArr}}
-  <li>{{@key}}: {{this}}</li>
-  {{/each}}
-</ul>
-<p>If you think this is the incorrect YouTube or Twitter account, </p>
-<p>or there are no tweets shown, </p>
-<p>please search manually: </p>
-<a href="/re-search"><button class="re-search">Re-Search</button></a>
 
+
+
+{{!-- 
+<div class="videoWrapper">
+    <!-- Copy & Pasted from YouTube -->
+    <iframe width="560" height="349" src="http://www.youtube.com/embed/n_dZNLr2cME?rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+</div> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="boxesT">
+  <ul id="t-w">
+    {{#each twitterArr}}
+    <img src="/public/bird.png" alt="bird" width = 8%>
+                         
+    <li>{{@key}}: {{this}}</li><hr>
+    {{/each}}
+    
+  </ul>
+
+  <p>If you think this is the incorrect YouTube or Twitter account, </p>
+  <p>or there are no tweets shown, </p>
+  <p>please search manually: </p>
+  <a href="/re-search"><button class="re-search">Re-Search</button></a>
+</div>
 {{!-- <a href="/"><button class="re-search">HOME</button></a> --}}
+
