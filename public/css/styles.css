@@ -2,7 +2,11 @@ body {
     font-family: 'Titillium Web', sans-serif;
     font-size: 20px;
     margin: 10px;
+    background-color: #d2faf2;
 }
+/* #b0f7e9 */
+/* #91e8d7 */
+/* #b9f0d4 */
 /* navbar */
 header {
     margin: -10px;
@@ -45,9 +49,9 @@ header {
     margin-top: 60px;
     /* border: 1px solid #ccc; */
     border-radius: 25px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
-    margin-left: 82px;
+    margin-left: 80px;
 }
 /* header on results page */
 
@@ -70,14 +74,15 @@ header {
     font-weight: bold;
     width: 226px;
     height: 48px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 25px;
     text-indent: 20px;
 }
 /* Select a YouTuber and view their videos with their Tweets */
-h2.intro {
+
+.intro {
     position: absolute;
-    width: 219px;
+    width: 220px;
     height: 210px;
     left: 74px;
     top: 260px;
@@ -85,7 +90,7 @@ h2.intro {
     font-style: normal;
     font-weight: normal;
     line-height: 31px;
-    font-size: 24px;
+    font-size: 22px;
     color: #000000;
 }
 
@@ -121,7 +126,7 @@ h2.yt {
 
 /* @media screen and (min-width: 900px){ */
 .boxesY {
-    background: #ccc;
+    /* background: #ccc; */
     display: flex;
     flex-wrap: wrap;
     float: left;
@@ -214,7 +219,7 @@ embed {
         padding-top: 25px;
         height: 0;
         align: center;
-        background: blueviolet;
+        /* background: blueviolet; */
     }
 }
 
@@ -227,12 +232,39 @@ embed {
     #nav-search {
         width: 180px;
         height: 46px;
+        top: 13px;
+    }
+
+    .search-text {
+        /* border-style: ; */
+        border: 3px solid #a3c3bd;
+    }
+
+    #submit-button {
+        border: 2px solid #778f8a;
+        background-color: #ffc756;
+    }
+
+    #re-submit {
+        border: 2px solid #778f8a;
+        background-color: #ffc756;
+        text-align: center;
+        align-self: center;
+        height: 30px;
+        margin-top: 0px;
+        /* border: 1px solid #ccc; */
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 800;
+        margin-left: 65px;
     }
 
     .boxesY {
         width: 100%;
         display: block;
         height: auto;
+        margin-top: 50px;
+        margin-left: -10px;
     }
 
     .boxesT {
@@ -250,6 +282,8 @@ embed {
         padding-top: 25px;
         height: 0;
         min-width: 340px;
+        /* background: blueviolet; */
+        border-bottom: 2px solid white;
     }
 
     iframe {
@@ -262,5 +296,24 @@ embed {
 
     .owl-logo {
         width: 40%;
+    }
+
+    .date-time {
+        font-size: 15px;
+        color: #5898d5;
+    }
+
+    label {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    #oops-intro {
+        font-size: 18px;
+    }
+
+    #oops {
+        font-size: 25px;
+        text-align: center;
     }
 }

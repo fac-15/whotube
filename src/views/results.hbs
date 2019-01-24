@@ -4,7 +4,7 @@
   {{#each youtubeArr}}
   <div class="width">
     <div class="videoWrapper">
-      <iframe allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'>
+      <iframe id="{{this}}" allowFullScreen="allowFullScreen" frameBorder="0" src='https://www.youtube.com/embed/{{this}}'>
       </iframe>
     </div>
   </div>
@@ -22,7 +22,7 @@
   <ul id="t-w">
     {{#each twitterArr}}
     <img src="/public/bird.png" alt="bird" width=8%>
-    <li class="tweet"><span class="date-time">{{@key}}:</span> {{this}}</li>
+    <li class="tweet"><span class="date-time">{{@key}}:</span><br /> {{this}}</li>
     <hr>
     {{/each}}
   </ul>
