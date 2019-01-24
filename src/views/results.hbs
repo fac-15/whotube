@@ -21,7 +21,23 @@
 <div class="boxesT">
   <ul id="t-w">
     {{#each twitterArr}}
-    <img src="/public/bird.png" alt="bird" width=8%>
+    {{!-- <img src="/public/bird.png" alt="bird" width=8%> --}}
+    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.25 28.25" width=7%>
+      <defs>
+        <style>
+          .cls-1 {
+            fill: none;
+            stroke: gray;
+            stroke-miterlimit: 10;
+            stroke-width: 1px;
+          }
+        </style>
+      </defs>
+      <title>bird2</title>
+      <path class="cls-1" d="M24.09,9.85a7.86,7.86,0,0,1-2.16.6,3.82,3.82,0,0,0,1.65-2.09,7.52,7.52,0,0,1-2.39.92,3.71,3.71,0,0,0-2.75-1.19,3.76,3.76,0,0,0-3.76,3.76,3.49,3.49,0,0,0,.1.86A10.73,10.73,0,0,1,7,8.78a3.76,3.76,0,0,0,1.16,5,3.79,3.79,0,0,1-1.7-.47v.05a3.77,3.77,0,0,0,3,3.69,3.64,3.64,0,0,1-1,.13,3.29,3.29,0,0,1-.71-.07,3.77,3.77,0,0,0,3.51,2.62,7.52,7.52,0,0,1-4.67,1.61c-.3,0-.6,0-.9-.05A10.75,10.75,0,0,0,11.51,23,10.64,10.64,0,0,0,22.22,12.29c0-.17,0-.33,0-.49A7.58,7.58,0,0,0,24.09,9.85Z"
+        transform="translate(-0.88 -0.88)" />
+      <circle class="cls-1" cx="14.12" cy="14.12" r="13.87" />
+    </svg>
     <li class="tweet"><span class="date-time">{{@key}}:</span><br /> {{this}}</li>
     <hr>
     {{/each}}

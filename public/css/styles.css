@@ -316,4 +316,8 @@ embed {
         font-size: 25px;
         text-align: center;
     }
+
+    #Layer_1 {
+        margin-top: 4px;
+    }
 }
