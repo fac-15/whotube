@@ -3,96 +3,24 @@
 [![Coverage Status](https://coveralls.io/repos/github/susanx/whotube/badge.svg?branch=master)](https://coveralls.io/github/susanx/whotube?branch=master)
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/susanx/whotube)
 
+![](https://i.imgur.com/ryta2Ep.png)
+# WhoTube? 
 
-## User instructions
+A web app for those who want to keep their favourite youtubers latest videos and tweets in one page, always under control!
 
-* clone the repo
-* npm i 
-* ask us for the keys
-* npm run dev 
-* on port 5000
-* soon to be on heroku - https://whotube.herokuapp.com
+## User instructions :books:
 
+Geeky version:
 
-### WhoTube? user questionnaire.
+* ```clone``` the repo
+* ```npm i``` 
+* ask us for the keys!:key:
+* ```npm run dev```
+* go to your on ```http://localhost:5000/```
+or, &nbsp;
+- navigate to https://whotube.herokuapp.com
+- madona ladra
 
-1. What social media do you normally use?
-    1.2. When was the last time you were on one of these social media?
-    1.3. In the last week, how long did you spend watching videos on youTube?
-2. Do you follow anyone on youTube? 
-3. How many youTubers do you actively follow?
-4. Do you follow these youTubers on other social medias as well?
-    4.1. If yes, what social media?
-5. Do you follow them as actively as on youTube?
-6. How do you keep up-to-date with each youTubers' social media videos/posts?
-7. How would you feel if all social media from one youTuber would be on one website?
-
-###### DAVID:
-
-1 - twitter
-facebook 
-youtube
-linkedin
-
-2 - an hour ago -twitter
-
-3 - 7 hours a week
-
-4 - yes, 5-6 people
-
-5 - used to, dont currently
-twit for work things
-youtube for fun
-more follow on youtube when he was into a particular one on both
-prev would have wanted to see all the things back 
-
-6 - 
-
-7 - 
-
-8 - when he was following on both that would have been useful
-at the moment its a bit seperated so he isnt sure how much it would be in use
-if it was an option?
-
-25-34
-
-male
-
-extra - one youTuber partner?
-higher conversion rate of potential to actual users?
-
-
-###### JAMIE - 
-
-1 - youTube Insta
-
-2 - yesterday eve
-
-3 - 4 hours
-
-4 - yes 2 main ones
-
-5 - yes insta
-
-6 - yes more info on insta
-more day to day on insta
-youtube is only every few days
-updates don't always make it to videos
-
-7 - follow on recommended videos on youtube
-
-8 - seems unnecessary to combine
-site might not do a good job of combining them
-more social media might be better split up
-depends on how it works
-might be better to see one person in one place
-seperated it is in more digestable chunks
-one long feed is a lot and could be overwhelming
-would give it a try if available
-
-9 - 26
-
-10 - male
 
 ## Logo ideas....
 ![](https://cdn.dribbble.com/users/20931/screenshots/2518827/trivify_g1_dribbble.gif)
@@ -118,7 +46,7 @@ would give it a try if available
 9. As a authenticated user, I want to see my saved profiles when I log into the app.
 
 
-## YouTube API
+## YouTube AP
 
 * We overcame quite complicated documentation to successfully retrieve the data we wanted.
 * We can get the Channel ID for the channel with the selected name.
