@@ -22,7 +22,7 @@ or more simply, &nbsp;
 - navigate to https://whotube.herokuapp.com
 
 ## Prototype
-https://www.dropbox.com/s/9hn05qxzitj32ct/figma.png?dl=0
+![](https://www.dropbox.com/s/9hn05qxzitj32ct/figma.png?raw=1)
 
 
 ## Logo ideas:
