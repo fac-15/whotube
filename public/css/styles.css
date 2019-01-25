@@ -1,9 +1,20 @@
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Sarabun', sans-serif;
     font-size: 20px;
     margin: 10px;
     background-color: #d2faf2;
 }
+
+h1 {
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 40px;
+  color: #315263;
+  font-family: 'Roboto', sans-serif;
+  padding-top: 3px;
+}
+
 /* #b0f7e9 */
 /* #91e8d7 */
 /* #b9f0d4 */
@@ -95,7 +106,6 @@ h2#center {
 
 li,
 p {
-    font-family: 'san serif';
     font-size: 20px;
     list-style: none;
     margin-bottom: 10px;
@@ -271,9 +281,15 @@ footer {
         margin-bottom: 80px;
     }
 
+
     button.re-submit {
         margin-left: 0px;
     }
+
+    button.re-submit-home {
+      display: inline;
+      
+  }
 
     .boxesY {
         width: 100%;
