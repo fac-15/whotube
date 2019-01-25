@@ -1,6 +1,4 @@
 const helpers = require('../src/views/helpers/index.js');
-
-const request = require('supertest');
 const nock = require('nock');
 require('dotenv').config();
 const youtubeKey = process.env.GOOGLE_API_KEY;
@@ -96,24 +94,3 @@ test('check if youtube video Api result is the same as Nock result', () => {
         'UCGexNm_Kw4rdQjLxmpb2EKw'
     );
 });
-
-// doesn't work at the moment, can't brake the test
-// describe('Test the root path', () => {
-//     test('It should response the GET method', () => {
-//         request(router)
-//             .get('/')
-//             .then(response => {
-//                 expect(response.statusCode).toBe(200);
-//             });
-//     });
-// });
-
-// describe('Test the wrong path', () => {
-//     test('It should response the GET method', () => {
-//         request(router)
-//             .get('/eghefg')
-//             .then(response => {
-//                 expect(response.statusCode).toBe(404);
-//             });
-//     });
-// });
