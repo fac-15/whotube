@@ -19,6 +19,7 @@ router.post('/', (req, res) => {
 router.get('/results/:search', (req, response) => {
     let search = req.url.split('/');
     search = search[search.length - 1];
+    const searchYoutubeClean1 = search.replace(/%20/g, ' ');
     // console.log(search);
     // console.log('inside router.get');
 
@@ -39,7 +40,7 @@ router.get('/results/:search', (req, response) => {
             response.render('results', {
                 youtubeArr: values[0],
                 twitterArr: values[1],
-                name: search
+                name: searchYoutubeClean1
             });
         })
         .catch(() => {
@@ -63,7 +64,7 @@ router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
     searchYoutube = searchYoutube[searchYoutube.length - 2];
     searchYoutube = searchYoutube.replace('&', '+and+');
     //replace %20 from url in order to display clean nickname
-    const searchYoutubeClean = searchYoutube.replace(/%20/g, ' ');
+    const searchYoutubeClean2 = searchYoutube.replace(/%20/g, ' ');
     // console.log('get seperate result YT: ', searchYoutube);
 
     let searchTwitter = req.url.split('/');
@@ -86,7 +87,7 @@ router.get('/results/:searchYoutube/:searchTwitter', (req, response) => {
             response.render('results', {
                 youtubeArr: values[0],
                 twitterArr: values[1],
-                name: searchYoutubeClean
+                name: searchYoutubeClean2
             });
         })
         .catch(() => {
