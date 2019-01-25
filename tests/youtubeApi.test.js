@@ -1,4 +1,5 @@
 const helpers = require('../src/views/helpers/index.js');
+const request = require('supertest');
 const nock = require('nock');
 require('dotenv').config();
 const youtubeKey = process.env.GOOGLE_API_KEY;
