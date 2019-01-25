@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/susanx/whotube)
 
 ![](https://i.imgur.com/95LeuJ1.png)
-# WhoTube? 
+# Mike, Susan, Alex, Lucy 
 
 A web app for those who want to keep their favourite youtubers' latest videos and tweets in one page, always under control!
 
@@ -20,6 +20,9 @@ Geeky version:
 
 or more simply, &nbsp;
 - navigate to https://whotube.herokuapp.com
+
+## Prototype
+![](https://www.dropbox.com/s/9hn05qxzitj32ct/figma.png?raw=1)
 
 
 ## Logo ideas:
