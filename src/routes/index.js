@@ -6,7 +6,7 @@ const helpers = require('../views/helpers/index.js');
 router.get('/', (req, response) => {
     // console.log('inside router.get');
     // console.log("routesfile: ",req.body);
-    response.render('home');
+    response.status(200).render('home');
 });
 
 router.post('/', (req, res) => {
