@@ -1,5 +1,8 @@
-const app = require('../src/app.js');
 const supertest = require('supertest');
+const app = require('../src/app.js');
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 describe('Check if home route return status 200', () => {
     test('GET to home should return status 200', done => {
