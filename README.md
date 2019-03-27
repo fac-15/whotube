@@ -14,7 +14,7 @@ Geeky version:
 
 * ```clone``` the repo
 * ```npm i``` 
-* ask us for the keys!:key:
+* ask us for the keys!:key: . Put this in a .env file and save at root level.
 * ```npm run dev```
 * go to your on ```http://localhost:5000/```
 
